@@ -2,7 +2,7 @@
 
 Generator teks dengan warna pelangi yang estetik dan menarik untuk sosial media, pesan, atau keperluan kreatif lainnya.
 
-![Preview Pelangi Huruf Generator] ![image](https://github.com/user-attachments/assets/c9fc7dc0-155b-44a8-8216-35f7153cc668)
+![image](https://github.com/user-attachments/assets/c9fc7dc0-155b-44a8-8216-35f7153cc668)
 
 ## 🚀 Fitur
 
