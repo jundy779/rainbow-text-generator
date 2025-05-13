@@ -2,8 +2,7 @@
 
 Generator teks dengan warna pelangi yang estetik dan menarik untuk sosial media, pesan, atau keperluan kreatif lainnya.
 
-![image](https://github.com/user-attachments/assets/c9fc7dc0-155b-44a8-8216-35f7153cc668)
-
+![generator text color](https://github.com/user-attachments/assets/3e63444a-d6e9-4b68-aad6-59a41b238412)
 ## 🚀 Fitur
 
 - **Multicolor Text**: Ubah teks biasa menjadi teks pelangi yang menawan
