@@ -2,8 +2,7 @@
 
 Generator teks dengan warna pelangi yang estetik dan menarik untuk sosial media, pesan, atau keperluan kreatif lainnya.
 
-![Preview Pelangi Huruf Generator](![image](https://github.com/user-attachments/assets/4e7d78e8-53db-42d7-9834-b6893973885e)
-)
+![Preview Pelangi Huruf Generator] ![image](https://github.com/user-attachments/assets/c9fc7dc0-155b-44a8-8216-35f7153cc668)
 
 ## 🚀 Fitur
 
@@ -35,7 +34,7 @@ Generator teks dengan warna pelangi yang estetik dan menarik untuk sosial media,
 
 1. Clone repositori
    ```bash
-   git clone https://github.com/jundy779/pelangi-huruf.git
+   git clone https://github.com/jundy779/rainbow-text-generator.git
    ```
 2. Buka file `index.html` di browser
 
