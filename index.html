@@ -1,267 +1,640 @@
 <!DOCTYPE html> 
-<html data-theme="light"> 
+<html data-theme="dark" data-view-mode="desktop"> 
 <head> 
   <meta charset="UTF-8" /> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pelangi Huruf Generator - Ultimate Edition</title> 
+  <meta name="color-scheme" content="dark light">
+  <title>Generator Pelangi Huruf - Material Design 3.0</title> 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap">
+  <!-- New recommended fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
   <style>
-    :root[data-theme="light"] {
-      --bg-color: #ffffff;
-      --text-color: #333333;
-      --card-bg: #f9f9f9;
-      --button-bg: #4285f4;
-      --button-text: #ffffff;
-      --button-hover: #2b579a;
-      --border-color: #dddddd;
+    :root {
+      /* Light theme */
+      --md-sys-color-primary: #00a0a0;
+      --md-sys-color-on-primary: #ffffff;
+      --md-sys-color-primary-container: #d0f4f4;
+      --md-sys-color-on-primary-container: #003737;
+      --md-sys-color-secondary: #4a6363;
+      --md-sys-color-on-secondary: #ffffff;
+      --md-sys-color-secondary-container: #ddf0f0;
+      --md-sys-color-on-secondary-container: #051f1f;
+      --md-sys-color-tertiary: #00a0c0;
+      --md-sys-color-on-tertiary: #ffffff;
+      --md-sys-color-tertiary-container: #d0f4ff;
+      --md-sys-color-on-tertiary-container: #003545;
+      --md-sys-color-error: #ba1a1a;
+      --md-sys-color-error-container: #ffdad6;
+      --md-sys-color-on-error: #ffffff;
+      --md-sys-color-on-error-container: #410002;
+      --md-sys-color-background: #f8fafa;
+      --md-sys-color-on-background: #191c1c;
+      --md-sys-color-surface: #f8fafa;
+      --md-sys-color-on-surface: #191c1c;
+      --md-sys-color-surface-variant: #e5f0f0;
+      --md-sys-color-on-surface-variant: #3f4948;
+      --md-sys-color-outline: #70807f;
+      --md-sys-color-inverse-on-surface: #eff1f0;
+      --md-sys-color-inverse-surface: #2e3131;
+      --md-sys-color-inverse-primary: #00c2c2;
+      --md-sys-color-shadow: #000000;
+      --md-sys-color-surface-tint: #00a0a0;
+      --md-sys-color-outline-variant: #c2d8d8;
+      --md-sys-color-scrim: #000000;
+    }
+
+    [data-theme="dark"] {
+      /* Dark theme - sesuai dengan screenshot */
+      --md-sys-color-primary: #00e2e2;
+      --md-sys-color-on-primary: #003737;
+      --md-sys-color-primary-container: #004f4f;
+      --md-sys-color-on-primary-container: #6ff7f7;
+      --md-sys-color-secondary: #b0cbcb;
+      --md-sys-color-on-secondary: #1b3434;
+      --md-sys-color-secondary-container: #253535;
+      --md-sys-color-on-secondary-container: #cce8e8;
+      --md-sys-color-tertiary: #00c2e2;
+      --md-sys-color-on-tertiary: #003d49;
+      --md-sys-color-tertiary-container: #00364c;
+      --md-sys-color-on-tertiary-container: #d2e4ff;
+      --md-sys-color-error: #ffb4ab;
+      --md-sys-color-error-container: #93000a;
+      --md-sys-color-on-error: #690005;
+      --md-sys-color-on-error-container: #ffdad6;
+      --md-sys-color-background: #1a1a1a;
+      --md-sys-color-on-background: #e0e3e2;
+      --md-sys-color-surface: #1e2323;
+      --md-sys-color-on-surface: #e0e3e2;
+      --md-sys-color-surface-variant: #253535;
+      --md-sys-color-on-surface-variant: #bec9c8;
+      --md-sys-color-outline: #899392;
+      --md-sys-color-inverse-on-surface: #191c1c;
+      --md-sys-color-inverse-surface: #e0e3e2;
+      --md-sys-color-inverse-primary: #006a6a;
+      --md-sys-color-shadow: #000000;
+      --md-sys-color-surface-tint: #00e2e2;
+      --md-sys-color-outline-variant: #3f4948;
+      --md-sys-color-scrim: #000000;
     }
     
-    :root[data-theme="dark"] {
-      --bg-color: #1e1e1e;
-      --text-color: #f0f0f0;
-      --card-bg: #2d2d2d;
-      --button-bg: #0078d4;
-      --button-text: #ffffff;
-      --button-hover: #106ebe;
-      --border-color: #444444;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
     
     body {
-      font-family: Arial, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      transition: all 0.3s ease;
-      padding: 20px;
-      margin: 0 auto;
-      box-sizing: border-box;
-      width: 100%;
-      overflow-x: hidden;
-    }
-    
-    h2 {
-      color: var(--text-color);
-      text-align: center;
-    }
-    
-    textarea {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid var(--border-color);
-      border-radius: 5px;
-      background-color: var(--card-bg);
-      color: var(--text-color);
-      font-size: 1em;
-      resize: vertical;
-      min-height: 100px;
-      box-sizing: border-box;
-      max-width: 100%;
-    }
-    
-    button {
-      background-color: var(--button-bg);
-      color: var(--button-text);
-      border: none;
-      padding: 8px 15px;
-      margin: 5px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.2s;
-      font-size: 1em;
-      min-width: 80px;
-    }
-    
-    button:hover {
-      background-color: var(--button-hover);
-    }
-    
-    .header {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    
-    .header h2 {
-      margin-bottom: 5px;
-      font-size: 1.8rem;
-    }
-    
-    .header p {
-      color: var(--text-color);
-      opacity: 0.8;
-      margin-top: 0;
-      font-size: 1rem;
-    }
-    
-    .output-container {
-      background: var(--card-bg);
-      padding: 15px;
-      border-radius: 5px;
-      margin-top: 15px;
-      border: 1px solid var(--border-color);
-      min-height: 100px;
-      font-size: 1.1em;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--md-sys-color-background);
+      color: var(--md-sys-color-on-background);
       line-height: 1.5;
-      word-break: break-word;
-      white-space: pre-wrap;
-      overflow-wrap: break-word;
-      overflow-x: auto;
-      max-width: 100%;
-      box-sizing: border-box;
+      margin: 0;
+      padding: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .material-card {
+      background-color: var(--md-sys-color-surface);
+      border-radius: var(--md-sys-shape-corner-medium);
+      box-shadow: var(--md-sys-elevation-level1);
+      padding: 24px;
+      margin-bottom: 24px;
+      transition: box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      max-width: 450px;
+      margin-left: auto;
+      margin-right: auto;
     }
     
-    button.rainbow {
-      background: linear-gradient(90deg, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff);
-      background-size: 600% 600%;
-      animation: rainbowAnimation 4s ease infinite;
-      color: white;
-      text-shadow: 0px 1px 2px rgba(0,0,0,0.4);
-      font-weight: bold;
+    .material-card:hover {
+      box-shadow: var(--md-sys-elevation-level2);
     }
     
-    @keyframes rainbowAnimation {
-      0% { background-position: 0% 50% }
-      50% { background-position: 100% 50% }
-      100% { background-position: 0% 50% }
+    .app-container {
+      max-width: 450px;
+      margin: 0 auto;
     }
     
+    .app-header {
+      text-align: center;
+      margin-bottom: 24px;
+      position: relative;
+    }
+    
+    .app-title {
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--md-sys-color-on-surface);
+      margin-bottom: 8px;
+    }
+    
+    .app-subtitle {
+      color: var(--md-sys-color-on-surface-variant);
+      font-size: 1rem;
+      font-weight: 400;
+    }
+    
+    .app-version {
+      color: #00e2e2;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-top: 8px;
+      padding: 4px 12px;
+      background-color: rgba(0, 226, 226, 0.12);
+      border-radius: 12px;
+      display: inline-block;
+    }
+    
+    [data-theme="light"] .app-version {
+      color: #00848f;
+      background-color: rgba(0, 132, 143, 0.12);
+    }
+    
+    /* Navigation and settings styles */
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding: 0 8px;
+    }
+    
+    .app-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--md-sys-color-on-surface-variant);
+      font-size: 0.875rem;
+    }
+    
+    .settings-menu {
+      position: relative;
+    }
+    
+    .settings-btn {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: var(--md-sys-color-on-surface-variant);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      transition: background-color 0.2s;
+    }
+    
+    .settings-btn:hover {
+      background-color: var(--md-sys-color-surface-variant);
+    }
+    
+    .settings-dropdown {
+      position: absolute;
+      right: 0;
+      top: 100%;
+      width: 260px;
+      background-color: #202020;
+      border-radius: var(--md-sys-shape-corner-medium);
+      box-shadow: var(--md-sys-elevation-level3);
+      padding: 16px;
+      z-index: 100;
+      transform-origin: top right;
+      transform: scale(0.95);
+      opacity: 0;
+      visibility: hidden;
+      transition: transform 0.2s, opacity 0.2s, visibility 0.2s;
+    }
+    
+    .settings-dropdown.active {
+      transform: scale(1);
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .settings-dropdown h3 {
+      margin-top: 0;
+      margin-bottom: 16px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--md-sys-color-on-surface);
+      text-align: left;
+    }
+    
+    .settings-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
+    
+    .settings-item label {
+      color: var(--md-sys-color-on-surface-variant);
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+      opacity: 0.9;
+      font-weight: 500;
+    }
+    
+    .version-info {
+      font-size: 0.75rem;
+      color: var(--md-sys-color-on-surface-variant);
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      opacity: 0.7;
+    }
+    
+    .version-info a {
+      color: #00e2e2;
+      text-decoration: none;
+      display: block;
+      margin-top: 5px;
+    }
+    
+    .version-info p {
+      margin: 0;
+    }
+    
+    /* Enhance switches for a more Material Design 3 look */
     .theme-switch {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      margin-bottom: 15px;
-      flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
+      width: 100%;
+      justify-content: space-between;
+      background: #2a2a2a;
+      padding: 8px 12px;
+      border-radius: 30px;
+      margin: 8px 0;
     }
     
-    .theme-switch label {
-      margin-right: 10px;
-      font-size: 0.95rem;
+    [data-theme="light"] .theme-switch {
+      background: #e0e0e0;
     }
     
-    .switch {
+    .md-switch {
       position: relative;
-      display: inline-block;
-      width: 60px;
-      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      width: 46px;
+      height: 26px;
+      margin: 0;
     }
     
-    .switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-    
-    .slider {
+    .md-slider {
       position: absolute;
       cursor: pointer;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: #ccc;
-      transition: .4s;
+      background-color: #404040;
+      transition: .3s;
       border-radius: 34px;
+      display: flex;
+      align-items: center;
     }
     
-    .slider:before {
+    [data-theme="light"] .md-slider {
+      background-color: #a0a0a0;
+    }
+    
+    .md-slider:before {
       position: absolute;
       content: "";
       height: 20px;
       width: 20px;
-      left: 4px;
-      bottom: 4px;
-      background-color: white;
-      transition: .4s;
+      left: 3px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      transition: .3s;
       border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
     }
     
-    input:checked + .slider {
-      background-color: #2196F3;
+    input:checked + .md-slider {
+      background-color: #00d2d0;
     }
     
-    input:checked + .slider:before {
-      transform: translateX(32px);
+    input:checked + .md-slider:before {
+      transform: translateX(20px) translateY(-50%);
     }
     
-    .container {
-      background-color: var(--card-bg);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      width: 100%;
-      box-sizing: border-box;
-      max-width: 760px;
-      margin: 0 auto;
+    .section-title {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #00e2e2;
+      margin-bottom: 16px;
+      margin-top: 16px;
+      text-align: left;
     }
-
-    .controls-row {
+    
+    .control-row {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 10px;
+      gap: 16px;
+      margin-bottom: 24px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .md-select {
+      position: relative;
       width: 100%;
-      box-sizing: border-box;
+      margin-bottom: 16px;
     }
-
-    select {
-      padding: 6px 10px;
-      border-radius: 5px;
-      border: 1px solid var(--border-color);
-      background-color: var(--card-bg);
-      color: var(--text-color);
-      cursor: pointer;
-      font-size: 1em;
-      min-width: 150px;
-      max-width: 100%;
-      box-sizing: border-box;
-    }
-
-    .slider-container {
+    
+    .md-select-header {
       display: flex;
       align-items: center;
-      gap: 10px;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background-color: transparent;
+      border-radius: 12px;
+      cursor: pointer;
+      user-select: none;
+      color: var(--md-sys-color-on-surface);
+      border: 1px solid #3a3a3a;
+      transition: all 0.2s;
+    }
+    
+    .md-select-header:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+    
+    .md-select-current {
+      flex: 1;
+    }
+    
+    .md-select-arrow {
+      display: flex;
+      align-items: center;
+      transition: transform 0.2s;
+    }
+    
+    .md-select-options {
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
       width: 100%;
-      margin-bottom: 10px;
+      background-color: #202020;
+      border-radius: 12px;
+      box-shadow: var(--md-sys-elevation-level2);
+      z-index: 100;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.3s, opacity 0.2s;
     }
     
-    .slider-container label {
-      min-width: 130px;
-      text-align: right;
+    .md-select.active .md-select-options {
+      max-height: 300px;
+      opacity: 1;
     }
     
-    .slider-container input[type="range"] {
+    .md-select.active .md-select-arrow {
+      transform: rotate(180deg);
+    }
+    
+    .md-select-option {
+      padding: 12px 16px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .md-select-option:hover {
+      background-color: var(--md-sys-color-surface-variant);
+    }
+    
+    /* Improved slider with Material Design 3 styling */
+    .md-slider-container {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+      margin-bottom: 24px;
+    }
+    
+    .md-slider-container label {
+      min-width: 120px;
+      color: #ccc;
+      font-size: 1rem;
+    }
+    
+    .md-slider-container .slider-wrapper {
       flex-grow: 1;
-      height: 10px;
-      border-radius: 5px;
-      background-color: var(--card-bg);
-      outline: none;
+      position: relative;
     }
     
-    .slider-container .value {
-      min-width: 40px;
+    /* Discrete slider with ticks */
+    .md-slider-discrete {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 4px;
+      background: #404040;
+      border-radius: 2px;
+      outline: none;
+      margin: 0;
+    }
+    
+    .md-slider-discrete::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 4px;
+      background: #404040;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+    
+    .md-slider-discrete::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #00e2e2; /* Updated to match the teal color in the screenshot */
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-top: -7px;
+      z-index: 2;
+      position: relative;
+    }
+    
+    .md-slider-discrete::-webkit-slider-thumb::before {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: var(--md-sys-color-primary-container);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.2s;
+      z-index: 1;
+    }
+    
+    .md-slider-discrete:focus::-webkit-slider-thumb::before,
+    .md-slider-discrete:hover::-webkit-slider-thumb::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    
+    .md-slider-discrete::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 0 8px rgba(0, 226, 226, 0.2);
+    }
+    
+    /* Tick marks */
+    .md-slider-ticks {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      height: 10px;
+      margin-top: 8px;
+      position: relative;
+    }
+    
+    .tick {
+      width: 1px;
+      height: 3px;
+      background-color: #404040;
+      position: absolute;
+      transform: translateX(-50%);
+      opacity: 0.5;
+    }
+    
+    .tick.major {
+      height: 8px;
+      width: 1px;
+      background-color: #606060;
+      opacity: 0.8;
+    }
+    
+    .md-slider-container .value {
+      color: #ccc;
+      font-size: 1rem;
+      min-width: 48px;
       text-align: right;
+    }
+    
+    /* Adjustments for light theme */
+    [data-theme="light"] .md-select-header {
+      background-color: transparent;
+      border-color: #c2d8d8;
+    }
+    
+    [data-theme="light"] .md-select-options {
+      background-color: #ffffff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    [data-theme="light"] .md-slider-discrete::-webkit-slider-thumb {
+      background: #00a0a0;
+    }
+    
+    [data-theme="light"] .md-slider-discrete::-webkit-slider-thumb:hover {
+      box-shadow: 0 0 0 8px rgba(0, 160, 160, 0.2);
+    }
+    
+    [data-theme="light"] .tick {
+      background-color: #c0c0c0;
+    }
+    
+    [data-theme="light"] .tick.major {
+      background-color: #909090;
+    }
+    
+    .md-slider-value-popup {
+      position: absolute;
+      bottom: 32px;
+      transform: translateX(-50%);
+      background-color: var(--md-sys-color-primary);
+      color: var(--md-sys-color-on-primary);
+      font-size: 14px;
+      line-height: 1;
+      padding: 8px;
+      border-radius: 4px;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      pointer-events: none;
+    }
+    
+    .md-slider-discrete:hover + .md-slider-value-popup,
+    .md-slider-discrete:focus + .md-slider-value-popup,
+    .md-slider-discrete:active + .md-slider-value-popup {
+      opacity: 1;
+    }
+    
+    .md-chip-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+      justify-content: center;
+    }
+    
+    .md-chip {
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid #3a3a3a;
+      background-color: #252525;
+      color: var(--md-sys-color-on-surface-variant);
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .md-chip.active {
+      background-color: #005858;
+      color: #ffffff;
+      border-color: #00e2e2;
+    }
+    
+    .palette-container {
+      text-align: center;
+      margin-bottom: 24px;
     }
     
     .color-palette {
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 10px 0;
-      align-items: center;
+      flex-wrap: nowrap;
+      gap: 6px;
+      margin: 16px 0;
       justify-content: center;
     }
     
     .palette-option {
-      width: 30px;
-      height: 30px;
-      border-radius: 4px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
       cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
       position: relative;
-      overflow: hidden;
-      border: 2px solid transparent;
+      box-shadow: var(--md-sys-elevation-level1);
+    }
+    
+    .palette-option:hover {
+      transform: scale(1.1);
     }
     
     .palette-option.active {
-      border: 2px solid var(--text-color);
+      box-shadow: 0 0 0 2px var(--md-sys-color-primary), var(--md-sys-elevation-level2);
     }
     
     .palette-option.rainbow {
@@ -294,33 +667,137 @@
       animation: rainbowAnimation 4s ease infinite;
     }
     
-    .font-selector {
+    @keyframes rainbowAnimation {
+      0% { background-position: 0% 50% }
+      50% { background-position: 100% 50% }
+      100% { background-position: 0% 50% }
+    }
+    
+    .md-textarea {
       width: 100%;
-      margin-bottom: 10px;
+      padding: 14px;
+      border: 1px solid #3a3a3a;
+      border-radius: var(--md-sys-shape-corner-small);
+      background-color: #252525;
+      color: var(--md-sys-color-on-surface);
+      font-size: 1rem;
+      font-family: 'Roboto', sans-serif;
+      resize: vertical;
+      min-height: 100px;
+      transition: border-color 0.3s;
+      margin-bottom: 24px;
     }
     
-    .font-option {
-      display: inline-block;
-      padding: 6px 10px;
-      margin: 3px;
-      background-color: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 5px;
+    .md-textarea:focus {
+      outline: none;
+      border-color: #00e2e2;
+    }
+    
+    /* Update MD Buttons with Material Design 3 styling */
+    .md-button {
+      padding: 0 24px;
+      height: 46px;
+      border-radius: 12px;
+      border: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
       cursor: pointer;
-      transition: all 0.2s;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      margin-bottom: 12px;
+      gap: 8px;
     }
     
-    .font-option.active {
-      background-color: var(--button-bg);
-      color: var(--button-text);
+    .md-button::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: transparent;
+      transition: background-color 0.2s;
     }
     
-    .font-arial { font-family: Arial, sans-serif; }
-    .font-times { font-family: 'Times New Roman', Times, serif; }
-    .font-courier { font-family: 'Courier New', Courier, monospace; }
-    .font-verdana { font-family: Verdana, Geneva, sans-serif; }
-    .font-georgia { font-family: Georgia, serif; }
-    .font-comic { font-family: 'Comic Sans MS', cursive, sans-serif; }
+    .md-button:hover::after {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .md-button:active::after {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    .md-button.primary {
+      background-color: #00d2d0;
+      color: #fff;
+    }
+    
+    .md-button.secondary {
+      background-color: #3e4a59;
+      color: #ffffff;
+    }
+    
+    .md-button.tertiary {
+      background-color: #1e2740;
+      color: #ffffff;
+    }
+    
+    .md-button:hover {
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+      transform: translateY(-1px);
+    }
+    
+    .md-button:active {
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+      transform: translateY(0);
+    }
+    
+    .md-button .material-symbols-rounded {
+      font-size: 20px;
+      font-variation-settings: 'FILL' 1;
+    }
+    
+    /* Light theme adjustments for buttons */
+    [data-theme="light"] .md-button.primary {
+      background-color: #00a0a0;
+      color: #ffffff;
+    }
+    
+    [data-theme="light"] .md-button.secondary {
+      background-color: #4a5568;
+      color: #ffffff;
+    }
+    
+    [data-theme="light"] .md-button.tertiary {
+      background-color: #2b3748;
+      color: #ffffff;
+    }
+    
+    .md-button.with-icon {
+      gap: 8px;
+    }
+    
+    .md-button .material-symbols-rounded {
+      font-size: 18px;
+    }
+    
+    .output-container {
+      background-color: #252525;
+      border-radius: var(--md-sys-shape-corner-medium);
+      padding: 24px;
+      min-height: 120px;
+      position: relative;
+      margin-bottom: 24px;
+      max-width: 100%;
+      overflow-x: auto;
+    }
     
     .loading-overlay {
       position: absolute;
@@ -332,8 +809,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      z-index: 1000;
-      border-radius: 5px;
+      z-index: 10;
+      border-radius: var(--md-sys-shape-corner-medium);
       visibility: hidden;
       opacity: 0;
       transition: opacity 0.3s;
@@ -344,7 +821,7 @@
       height: 40px;
       border: 4px solid rgba(255, 255, 255, 0.3);
       border-radius: 50%;
-      border-top: 4px solid var(--button-bg);
+      border-top: 4px solid var(--md-sys-color-primary);
       animation: spin 1s linear infinite;
     }
     
@@ -353,173 +830,2315 @@
       100% { transform: rotate(360deg); }
     }
     
-    .output-wrapper {
-      position: relative;
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 24px;
     }
     
-    /* Responsiveness for mobile devices, max width 400px */
-    @media (max-width: 400px) {
-      body {
-        padding: 10px;
+    /* Add new font classes */
+    .font-google {
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .font-hacker {
+      font-family: 'VT323', monospace;
+    }
+    
+    .font-code {
+      font-family: 'Fira Code', monospace;
+    }
+    
+    .font-modern {
+      font-family: 'Work Sans', sans-serif;
+    }
+    
+    /* New recommended font classes */
+    .font-inter {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .font-jetbrains {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    
+    .font-ibm-sans {
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+    
+    .font-ibm-mono {
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    
+    .font-montserrat {
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .font-source {
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+    
+    .font-nunito {
+      font-family: 'Nunito', sans-serif;
+    }
+    
+    .font-opensans {
+      font-family: 'Open Sans', sans-serif;
+    }
+    
+    /* Enhanced Mobile Responsiveness */
+    @media (max-width: 767px) {
+      .app-container {
         max-width: 100%;
+        padding: 0;
       }
-      .container {
-        padding: 15px;
+      
+      .material-card {
+        border-radius: var(--md-sys-shape-corner-medium);
+        margin-bottom: 16px;
+        padding: 16px;
       }
-      h2 {
+      
+      .nav-container {
+        padding: 0;
+      }
+      
+      .settings-dropdown {
+        width: 240px;
+      }
+      
+      .app-title {
         font-size: 1.5rem;
+        margin-bottom: 4px;
       }
-      .header p {
-        font-size: 0.9rem;
+      
+      .app-subtitle {
+        font-size: 0.875rem;
       }
-      textarea {
-        font-size: 1em;
-        min-height: 80px;
-        padding: 8px;
+      
+      .control-row {
+        flex-direction: column;
+        gap: 12px;
       }
-      button {
-        font-size: 0.95em;
-        padding: 10px;
-        margin: 5px 3px;
-        flex: 1 1 30%;
+      
+      .md-select {
+        width: 100%;
         min-width: unset;
       }
-      .controls-row {
+      
+      .md-slider-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      
+      .md-slider-container label {
+        min-width: unset;
+        margin-bottom: 4px;
+      }
+      
+      .md-slider-container .value {
+        text-align: left;
+        margin-top: 4px;
+      }
+      
+      .md-chip-group {
+        gap: 8px;
+        justify-content: center;
+      }
+      
+      .md-chip {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 36px;
+      }
+      
+      .color-palette {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 8px;
+        margin: 12px 0;
+      }
+      
+      .palette-option {
+        width: 36px;
+        height: 36px;
+        margin: 0 auto;
+      }
+      
+      .button-container {
         flex-direction: column;
         gap: 10px;
       }
-      select {
-        font-size: 1em;
-        min-width: 100%;
+      
+      .md-button {
+        width: 100%;
+        height: 44px;
       }
-      .theme-switch {
-        justify-content: center;
-        gap: 8px;
-        font-size: 0.9rem;
+      
+      .md-textarea {
+        min-height: 100px;
+        padding: 12px;
       }
+      
       .output-container {
-        font-size: 1em;
-        padding: 10px;
-        min-height: 80px;
+        padding: 16px;
+        min-height: 100px;
       }
-      footer {
-        margin-top: 20px;
-        padding: 10px;
-        font-size: 0.8rem;
+      
+      /* Mobile touch optimizations */
+      .md-chip,
+      .palette-option,
+      .md-button,
+      select,
+      .md-slider-discrete::-webkit-slider-thumb {
+        transform: scale(1.05);
       }
-      .slider-container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
+      
+      .md-slider-discrete::-webkit-slider-thumb {
+        width: 24px;
+        height: 24px;
       }
-      .slider-container label {
-        min-width: auto;
-        text-align: left;
+      
+      /* Improved tap targets */
+      .md-slider-ticks .tick {
+        height: 4px;
       }
-      .palette-option {
-        width: 25px;
-        height: 25px;
-      }
-      .direction-options {
-        flex-wrap: wrap;
-        gap: 5px;
-      }
-      .direction-btn {
-        font-size: 0.8em;
-        padding: 5px 8px;
-        flex: 1 1 40%;
-      }
-      .font-option {
-        font-size: 0.8em;
-        padding: 4px 6px;
-        margin: 2px;
+      
+      .md-slider-ticks .tick.major {
+        height: 8px;
+        width: 3px;
       }
     }
     
-    footer {
+    /* Small mobile devices */
+    @media (max-width: 480px) {
+      body {
+        padding: 8px;
+      }
+      
+      .app-title {
+        font-size: 1.3rem;
+      }
+      
+      .material-card {
+        padding: 12px;
+      }
+      
+      .md-chip-group {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 6px;
+      }
+      
+      .md-chip {
+        flex: 0 0 calc(33.33% - 6px);
+        text-align: center;
+        box-sizing: border-box;
+        font-size: 0.75rem;
+        padding: 6px 4px;
+      }
+      
+      .settings-dropdown {
+        width: 220px;
+        right: -8px;
+      }
+      
+      .color-palette {
+        grid-template-columns: repeat(6, 1fr);
+        overflow-x: auto;
+        scrollbar-width: none; /* Firefox */
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      .color-palette::-webkit-scrollbar {
+        display: none; /* Safari and Chrome */
+      }
+      
+      .palette-option {
+        width: 32px;
+        height: 32px;
+      }
+    }
+    
+    /* Extra small mobile devices */
+    @media (max-width: 380px) {
+      .md-chip {
+        flex: 0 0 calc(50% - 6px);
+      }
+      
+      .color-palette {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+    
+    /* View Mode Styles */
+    [data-view-mode="mobile"] .app-container {
+      max-width: 360px;
+      padding: 0;
+    }
+    
+    [data-view-mode="desktop"] .app-container {
+      max-width: 720px;
+    }
+    
+    /* View Switcher Styles */
+    .view-mode-switcher {
+      width: 100%;
+    }
+    
+    .view-switch-toggle {
+      display: flex;
+      align-items: center;
+      background-color: #2a2a2a;
+      border-radius: 30px;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      justify-content: space-between;
+    }
+    
+    [data-theme="light"] .view-switch-toggle {
+      background-color: #e0e0e0;
+    }
+    
+    .view-switch-option {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      z-index: 2;
+      padding: 8px 0;
+      width: 50%;
       text-align: center;
-      margin-top: 30px;
-      padding: 15px;
-      border-top: 1px solid var(--border-color);
-      color: var(--text-color);
-      opacity: 0.8;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+    }
+    
+    .view-switch-slider {
+      position: absolute;
+      height: calc(100% - 6px);
+      width: calc(50% - 4px);
+      border-radius: 20px;
+      background-color: #00d2d0;
+      transition: transform 0.3s ease;
+      z-index: 1;
+      top: 3px;
+      left: 3px;
+      box-shadow: none;
+    }
+    
+    .view-switch-toggle input:checked ~ .view-switch-slider {
+      transform: translateX(calc(100% + 2px));
+    }
+    
+    .view-switch-option.active {
+      color: white;
+      font-weight: 500;
+    }
+    
+    .view-switch-option:not(.active) {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .view-switch-icon {
+      font-size: 18px;
+    }
+    
+    /* Material card adjustments based on view mode */
+    [data-view-mode="mobile"] .material-card {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 360px;
+    }
+    
+    [data-view-mode="desktop"] .material-card {
+      max-width: 720px;
+    }
+    
+    @media (max-width: 767px) {
+      [data-view-mode="desktop"] .material-card {
+        max-width: 100%;
+      }
+    }
+    
+    .view-switch-toggle input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      position: absolute;
+    }
+    
+    .md-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    /* Light mode override styles */
+    [data-theme="light"] .settings-dropdown {
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="light"] .theme-switch {
+      background-color: #e0e0e0;
+      border: 1px solid #d0d0d0;
+    }
+    
+    [data-theme="light"] .md-slider {
+      background-color: #a0a0a0;
+    }
+    
+    [data-theme="light"] input:checked + .md-slider {
+      background-color: #008585;
+    }
+    
+    [data-theme="light"] .md-slider:before {
+      box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    }
+
+    [data-theme="light"] .view-switch-toggle {
+      background-color: #ddd;
+      border: 1px solid #ccc;
+    }
+    
+    [data-theme="light"] .view-switch-slider {
+      background-color: #008585;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    }
+    
+    [data-theme="light"] .view-switch-option {
+      color: #505050;
+    }
+    
+    [data-theme="light"] .view-switch-option.active {
+      color: #ffffff;
+      font-weight: 500;
+    }
+    
+    [data-theme="light"] .theme-icon {
+      color: #404040;
+    }
+
+    [data-theme="light"] .md-select-header {
+      background-color: #e5f0f0;
+    }
+
+    [data-theme="light"] .md-chip {
+      background-color: #e5f0f0;
+      border-color: #c2d8d8;
+      color: #3f4948;
+    }
+
+    [data-theme="light"] .md-chip.active {
+      background-color: #d0f4f4;
+      color: #003737;
+      border-color: #00a0a0;
+    }
+
+    [data-theme="light"] .md-textarea {
+      background-color: #ffffff;
+      border-color: #c2d8d8;
+    }
+
+    [data-theme="light"] .section-title {
+      color: #00a0a0;
+    }
+
+    [data-theme="light"] .output-container {
+      background-color: #e5f0f0;
+    }
+
+    [data-theme="light"] .version-info {
+      color: #3f4948;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="light"] .version-info a {
+      color: #00a0a0;
+    }
+
+    [data-theme="light"] .md-button.secondary,
+    [data-theme="light"] .md-button.tertiary {
+      background-color: #e5f0f0;
+      color: #003737;
+    }
+
+    /* Perbaikan umum untuk switch di kedua mode */
+    .md-slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 3px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      transition: .3s;
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+    
+    input:checked + .md-slider {
+      background-color: #00d2d0;
+    }
+    
+    input:checked + .md-slider:before {
+      transform: translateX(20px) translateY(-50%);
+    }
+    
+    .view-switch-slider {
+      position: absolute;
+      height: calc(100% - 6px);
+      width: calc(50% - 4px);
+      border-radius: 20px;
+      background-color: #00c2c2;
+      transition: transform 0.3s ease;
+      z-index: 1;
+      top: 3px;
+      left: 3px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    /* Dark theme style overrides to maintain consistent borders in light mode */
+    [data-theme="dark"] .md-textarea,
+    [data-theme="dark"] .md-select-header,
+    [data-theme="dark"] .md-chip {
+      border-color: #3a3a3a;
+    }
+
+    /* Memastikan teks dan ikon pada switch lebih terlihat pada mode terang */
+    [data-theme="light"] .theme-icon {
+      color: #404040;
+    }
+    
+    /* Icon peralihan view mode lebih kontras di mode terang */
+    [data-theme="light"] .view-switch-icon {
+      color: #404040;
+    }
+    
+    /* Memperbaiki warna transisi pada slider saat diaktifkan */
+    input:focus + .md-slider {
+      box-shadow: 0 0 1px #009595;
+    }
+
+    [data-theme="light"] .md-slider:before {
+      box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+    }
+
+    .theme-icon {
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    [data-theme="light"] .theme-icon {
+      color: rgba(0, 0, 0, 0.7);
+    }
+    
+    .theme-switch .material-symbols-rounded {
+      font-size: 22px;
+    }
+
+    /* Improve view switch toggles */
+    .view-switch-toggle {
+      padding: 4px;
+      height: 36px;
+    }
+
+    .view-switch-option {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.85rem;
+    }
+
+    [data-theme="light"] .view-switch-option {
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    .view-switch-slider {
+      height: calc(100% - 8px);
+      width: calc(50% - 4px);
+      top: 4px;
+      border-radius: 20px;
+    }
+
+    /* Improve icon size and positioning */
+    .view-switch-icon {
+      font-size: 17px;
+      opacity: 0.9;
+    }
+
+    /* Add ripple effect */
+    .md-button {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .md-button .ripple {
+      position: absolute;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.4);
+      transform: scale(0);
+      animation: ripple 0.6s linear;
+      pointer-events: none;
+    }
+    
+    @keyframes ripple {
+      to {
+        transform: scale(2.5);
+        opacity: 0;
+      }
+    }
+    
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+    
+    .button-container .md-button {
+      flex: 1 0 calc(50% - 6px);
+      min-width: 160px;
+    }
+    
+    @media (max-width: 576px) {
+      .button-container {
+        flex-direction: column;
+      }
+      
+      .button-container .md-button {
+        width: 100%;
+        flex: 1 0 100%;
+      }
+    }
+
+    /* Add styling for the header title to match the screenshot */
+    h2.section-title:first-of-type {
+      color: #00e2e2;
+      text-align: left;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    .md-select-arrow span {
+      font-size: 24px;
+      color: #aaa;
+    }
+
+    /* Add CSS for improved mobile experience with more ticks */
+    @media (max-width: 767px) {
+      .tick:nth-child(odd):not(.major) {
+        display: none;
+      }
+    }
+
+    /* Light mode override styles with improved text contrast */
+    [data-theme="light"] {
+      /* Update primary text color to be darker for better contrast */
+      --md-sys-color-on-surface: #121212;
+      --md-sys-color-on-background: #121212;
+      --md-sys-color-on-surface-variant: #333333;
+    }
+
+    [data-theme="light"] .section-title {
+      color: #00848f;
+      font-weight: 500;
+    }
+
+    [data-theme="light"] .md-select-header {
+      background-color: transparent;
+      border-color: #c2d8d8;
+      color: #00576b;
+    }
+
+    [data-theme="light"] .md-select-current {
+      color: #00576b;
+    }
+
+    [data-theme="light"] .md-slider-container label,
+    [data-theme="light"] .md-slider-container .value {
+      color: #00576b;
+      font-weight: 500;
+    }
+
+    [data-theme="light"] .md-chip {
+      background-color: #e5f0f0;
+      border-color: #c2d8d8;
+      color: #00576b;
+    }
+
+    [data-theme="light"] .md-chip.active {
+      background-color: #d0f4f4;
+      color: #003737;
+      border-color: #00a0a0;
+      font-weight: 500;
+    }
+
+    [data-theme="light"] .app-subtitle {
+      color: #00576b;
+    }
+
+    [data-theme="light"] .output-container {
+      background-color: #e5f0f0;
+      border: 1px solid #c2d8d8;
+    }
+
+    /* Ensure text in textarea is clearly visible in light mode */
+    [data-theme="light"] .md-textarea {
+      color: #00576b;
+    }
+
+    /* Update button text colors for better visibility in light mode */
+    [data-theme="light"] .md-button.secondary,
+    [data-theme="light"] .md-button.tertiary {
+      background-color: #e5f0f0;
+      color: #00576b;
+      border: 1px solid #c2d8d8;
+    }
+
+    /* Settings text in light mode */
+    [data-theme="light"] .settings-item label {
+      color: #00576b;
+    }
+
+    [data-theme="light"] .app-title {
+      color: #00576b;
+    }
+
+    [data-theme="light"] .app-info {
+      color: #00576b;
+    }
+
+    [data-theme="light"] .nav-container .material-symbols-rounded {
+      color: #00576b;
+    }
+
+    [data-theme="light"] .settings-dropdown {
+      background-color: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e0e0e0;
+    }
+
+    [data-theme="light"] .settings-dropdown h3 {
+      color: #00576b;
+    }
+
+    /* Better contrast for settings dropdown options */
+    [data-theme="light"] .view-switch-option {
+      color: #00576b;
+    }
+
+    /* Adjust the slider ticks to be more visible in light mode */
+    [data-theme="light"] .tick {
+      background-color: #a0a0a0;
+    }
+
+    [data-theme="light"] .tick.major {
+      background-color: #707070;
+    }
+
+    /* Add a subtle border to the material card in light mode for better definition */
+    [data-theme="light"] .material-card {
+      border: 1px solid #e0e0e0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Enhance the color palette display in light mode */
+    [data-theme="light"] .palette-option {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      border: 1px solid #e0e0e0;
+    }
+
+    [data-theme="light"] .palette-option.active {
+      box-shadow: 0 0 0 2px #00a0a0, 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* For the generated text, ensure better readability in light mode */
+    [data-theme="light"] .output-container a {
+      color: #0066cc;
+    }
+
+    /* Make the generated text shadows more visible in light mode */
+    [data-theme="light"] .output-container span {
+      text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Add CSS for the new palette options with animations */
+    .palette-option.forest-dream {
+      background: linear-gradient(90deg, #004d00, #008c00, #00c800, #32cd32);
+      background-size: 400% 400%;
+      animation: rainbowAnimation 5s ease infinite;
+    }
+    
+    .palette-option.sakura-bloom {
+      background: linear-gradient(90deg, #ffd1dc, #ffb7c5, #ff839f, #d8b2d1);
+      background-size: 400% 400%;
+      animation: rainbowAnimation 5s ease infinite;
+    }
+    
+    .palette-option.glacier {
+      background: linear-gradient(90deg, #e0ffff, #87ceeb, #6495ed, #008b8b);
+      background-size: 400% 400%;
+      animation: rainbowAnimation 5s ease infinite;
+    }
+    
+    .palette-option.rainbow-shine {
+      background: linear-gradient(90deg, #ff0000, #ffd700, #00ff00, #00ffff, #0000ff, #ff00ff);
+      background-size: 600% 600%;
+      animation: rainbowAnimation 4s ease infinite;
+    }
+    
+    .palette-option.pastel-candy {
+      background: linear-gradient(90deg, #ffb6c1, #ffffcc, #ccffcc, #ccccff);
+      background-size: 400% 400%;
+      animation: rainbowAnimation 5s ease infinite;
+    }
+    
+    .palette-option.aurora-borealis {
+      background: linear-gradient(90deg, #98ff98, #00ffff, #8a2be2, #ff00ff);
+      background-size: 400% 400%;
+      animation: rainbowAnimation 5s ease infinite;
+    }
+    
+    .palette-option.galaxy {
+      background: linear-gradient(90deg, #000033, #0000cc, #6633ff, #ff33ff);
+      background-size: 400% 400%;
+      animation: rainbowAnimation 5s ease infinite;
+    }
+    
+    .palette-option.lava-flow {
+      background: linear-gradient(90deg, #8b0000, #ff0000, #ff8c00, #ffd700);
+      background-size: 400% 400%;
+      animation: rainbowAnimation 5s ease infinite;
+    }
+    
+    /* Enhanced styles for font chip groups with more options */
+    .md-chip-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+      justify-content: flex-start;
+    }
+    
+    .md-chip {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid #3a3a3a;
+      background-color: #252525;
+      color: var(--md-sys-color-on-surface-variant);
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      min-width: 70px;
+      text-align: center;
+      flex: 0 0 calc(25% - 8px);
+    }
+    
+    @media (max-width: 767px) {
+      .md-chip {
+        flex: 0 0 calc(33.33% - 8px);
+        font-size: 0.8rem;
+        padding: 6px 8px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .md-chip {
+        flex: 0 0 calc(50% - 8px);
+      }
     }
   </style>
 </head> 
 <body> 
-  <div class="container">
-    <div class="theme-switch">
-      <label>Mode Terang</label>
-      <label class="switch">
-        <input type="checkbox" id="themeToggle" />
-        <span class="slider"></span>
-      </label>
-      <label>Mode Gelap</label>
+  <div class="app-container">
+    <div class="nav-container">
+      <div class="app-info">
+        <span class="material-symbols-rounded">palette</span>
+        <span>Pelangi Huruf Generator</span>
+      </div>
+      <div class="settings-menu">
+        <button class="settings-btn" id="settingsBtn">
+          <span class="material-symbols-rounded">settings</span>
+        </button>
+        <div class="settings-dropdown" id="settingsMenu">
+          <h3>Pengaturan</h3>
+          
+          <div class="settings-item">
+            <label>Mode Tampilan</label>
+            <div class="theme-switch">
+              <div class="theme-icon">
+                <span class="material-symbols-rounded">light_mode</span>
+              </div>
+              <label class="md-switch">
+                <input type="checkbox" id="themeToggle" checked />
+                <span class="md-slider"></span>
+              </label>
+              <div class="theme-icon">
+                <span class="material-symbols-rounded">dark_mode</span>
+              </div>
+            </div>
+          </div>
+    
+          <div class="settings-item">
+            <label>Mode View</label>
+            <div class="view-mode-switcher">
+              <label class="view-switch-toggle">
+                <input type="checkbox" id="viewModeToggle">
+                <div class="view-switch-option" data-mode="desktop">
+                  <span class="view-switch-icon material-symbols-rounded">desktop_windows</span>
+                  <span>Desktop</span>
+                </div>
+                <div class="view-switch-option" data-mode="mobile">
+                  <span class="view-switch-icon material-symbols-rounded">smartphone</span>
+                  <span>Ponsel</span>
+                </div>
+                <div class="view-switch-slider"></div>
+              </label>
+            </div>
+          </div>
+
+          <div class="settings-item">
+            <label>Mode Rendering Teks</label>
+            <div class="view-mode-switcher">
+              <label class="view-switch-toggle">
+                <input type="checkbox" id="renderModeToggle">
+                <div class="view-switch-option" data-mode="grouped">
+                  <span class="view-switch-icon material-symbols-rounded">compress</span>
+                  <span>Dikelompok</span>
+                </div>
+                <div class="view-switch-option" data-mode="character">
+                  <span class="view-switch-icon material-symbols-rounded">expand</span>
+                  <span>Per Karakter</span>
+                </div>
+                <div class="view-switch-slider"></div>
+              </label>
+            </div>
+          </div>
+
+          <div class="settings-item">
+            <label>Tampilkan Disclaimer</label>
+            <div class="view-mode-switcher">
+              <label class="view-switch-toggle">
+                <input type="checkbox" id="disclaimerToggle" checked>
+                <div class="view-switch-option" data-mode="off">
+                  <span class="view-switch-icon material-symbols-rounded">visibility_off</span>
+                  <span>Sembunyikan</span>
+                </div>
+                <div class="view-switch-option" data-mode="on">
+                  <span class="view-switch-icon material-symbols-rounded">visibility</span>
+                  <span>Tampilkan</span>
+                </div>
+                <div class="view-switch-slider"></div>
+              </label>
+            </div>
+          </div>
+
+          <div class="version-info">
+            <p>Version 3.0 | © 2025 Fusionify Digital</p>
+            <a href="https://github.com/jundy779" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="app-header">
+      <h1 class="app-title">🌈 Color Text Generator</h1>
+      <p class="app-subtitle">Buat teks dengan warna pelangi yang estetik dan menarik</p>
+      <p class="app-version">v3.0 - 10+ Fonts & New Color Palettes</p>
+    </div>
+
+    <div class="material-card">
+      <h2 class="section-title">Pengaturan</h2>
+      
+      <!-- Updated custom select with Material Design 3 styling -->
+      <div class="md-select" id="fontStyleSelectContainer">
+        <div class="md-select-header">
+          <div class="md-select-current" id="currentFontStyle">Normal</div>
+          <div class="md-select-arrow">
+            <span class="material-symbols-rounded">arrow_drop_down</span>
+          </div>
+        </div>
+        <div class="md-select-options">
+          <div class="md-select-option" data-value="normal">Normal</div>
+          <div class="md-select-option" data-value="bold">Tebal</div>
+          <div class="md-select-option" data-value="italic">Miring</div>
+          <div class="md-select-option" data-value="underline">Garis Bawah</div>
+        </div>
+      </div>
+
+      <!-- Update the slider HTML -->
+      <div class="md-slider-container">
+        <label for="fontSizeSlider">Ukuran Font:</label>
+        <div class="slider-wrapper">
+          <input type="range" id="fontSizeSlider" class="md-slider-discrete" min="10" max="50" value="16" step="2">
+          <div class="md-slider-value-popup" id="sliderValuePopup">16px</div>
+          <div class="md-slider-ticks" id="sliderTicks"></div>
+        </div>
+        <span class="value" id="fontSizeValue">16px</span>
+      </div>
+
+      <div class="section-title">Pilih Jenis Font</div>
+      <div class="md-chip-group">
+        <div class="md-chip font-arial active" data-font="Arial, sans-serif">Arial</div>
+        <div class="md-chip font-times" data-font="'Times New Roman', Times, serif">Times</div>
+        <div class="md-chip font-courier" data-font="'Courier New', Courier, monospace">Courier</div>
+        <div class="md-chip font-verdana" data-font="Verdana, Geneva, sans-serif">Verdana</div>
+        <div class="md-chip font-georgia" data-font="Georgia, serif">Georgia</div>
+        <div class="md-chip font-comic" data-font="'Comic Sans MS', cursive, sans-serif">Comic</div>
+        <div class="md-chip font-google" data-font="'Poppins', sans-serif">Poppins</div>
+        <div class="md-chip font-hacker" data-font="'VT323', monospace">Hacker</div>
+        <div class="md-chip font-code" data-font="'Fira Code', monospace">Fira Code</div>
+        <div class="md-chip font-modern" data-font="'Work Sans', sans-serif">Modern</div>
+        <div class="md-chip font-inter" data-font="'Inter', sans-serif">Inter</div>
+        <div class="md-chip font-jetbrains" data-font="'JetBrains Mono', monospace">JetBrains</div>
+        <div class="md-chip font-ibm-sans" data-font="'IBM Plex Sans', sans-serif">IBM Sans</div>
+        <div class="md-chip font-ibm-mono" data-font="'IBM Plex Mono', monospace">IBM Mono</div>
+        <div class="md-chip font-montserrat" data-font="'Montserrat', sans-serif">Montserrat</div>
+        <div class="md-chip font-source" data-font="'Source Sans Pro', sans-serif">Source</div>
+        <div class="md-chip font-nunito" data-font="'Nunito', sans-serif">Nunito</div>
+        <div class="md-chip font-opensans" data-font="'Open Sans', sans-serif">Open Sans</div>
+    </div>
+
+      <div class="palette-container">
+        <div class="section-title">Pilih Skema Warna</div>
+      <div class="color-palette">
+          <div class="palette-option rainbow active" data-palette="rainbow" title="Rainbow" style="background: linear-gradient(90deg, red, orange, yellow, green, blue, violet);"></div>
+          <div class="palette-option pastel" data-palette="pastel" title="Pastel" style="background: linear-gradient(90deg, #ffafcc, #ffc8dd, #cdb4db, #bde0fe);"></div>
+          <div class="palette-option neon" data-palette="neon" title="Neon" style="background: linear-gradient(90deg, #00ffcc, #ff00ff, #ffff00);"></div>
+          <div class="palette-option sunset" data-palette="sunset" title="Sunset" style="background: linear-gradient(90deg, #ff7b00, #ffaa00, #ffea00);"></div>
+          <div class="palette-option ocean" data-palette="ocean" title="Ocean" style="background: linear-gradient(90deg, #006699, #0099cc, #00ccff);"></div>
+          <div class="palette-option forest-dream" data-palette="forest-dream" title="Forest Dream" style="background: linear-gradient(90deg, #004d00, #008c00, #00c800, #32cd32);"></div>
+          <div class="palette-option sakura-bloom" data-palette="sakura-bloom" title="Sakura Bloom" style="background: linear-gradient(90deg, #ffd1dc, #ffb7c5, #ff839f, #d8b2d1);"></div>
+          <div class="palette-option glacier" data-palette="glacier" title="Glacier" style="background: linear-gradient(90deg, #e0ffff, #87ceeb, #6495ed, #008b8b);"></div>
+          <div class="palette-option rainbow-shine" data-palette="rainbow-shine" title="Rainbow Shine" style="background: linear-gradient(90deg, #ff0000, #ffd700, #00ff00, #00ffff, #0000ff, #ff00ff);"></div>
+          <div class="palette-option pastel-candy" data-palette="pastel-candy" title="Pastel Candy" style="background: linear-gradient(90deg, #ffb6c1, #ffffcc, #ccffcc, #ccccff);"></div>
+          <div class="palette-option aurora-borealis" data-palette="aurora-borealis" title="Aurora Borealis" style="background: linear-gradient(90deg, #98ff98, #00ffff, #8a2be2, #ff00ff);"></div>
+          <div class="palette-option galaxy" data-palette="galaxy" title="Galaxy" style="background: linear-gradient(90deg, #000033, #0000cc, #6633ff, #ff33ff);"></div>
+          <div class="palette-option lava-flow" data-palette="lava-flow" title="Lava Flow" style="background: linear-gradient(90deg, #8b0000, #ff0000, #ff8c00, #ffd700);"></div>
+      </div>
+    </div>
+
+      <textarea id="inputText" class="md-textarea" placeholder="Masukkan teks kamu di sini..."></textarea>
+      
+      <div class="button-container">
+        <button class="md-button primary with-icon" onclick="generate(false)">
+          <span class="material-symbols-rounded">palette</span>
+          Generate
+        </button>
+        <button class="md-button secondary with-icon" onclick="generate(true)">
+          <span class="material-symbols-rounded">shuffle</span>
+          Randomize
+        </button>
+        <button class="md-button tertiary with-icon" onclick="copyToClipboard()">
+          <span class="material-symbols-rounded">content_copy</span>
+          Copy to Clipboard
+        </button>
+        <button class="md-button tertiary with-icon" onclick="saveAsHTML()">
+          <span class="material-symbols-rounded">download</span>
+          Save as HTML
+        </button>
+    </div>
     </div>
     
-    <div class="header">
-      <h2>🌈 Generator Pelangi Huruf</h2>
-      <p>Buat teks dengan warna pelangi yang estetik dan menarik</p>
-    </div> 
-
-    <div class="controls-row">
-      <select id="fontStyleSelect" title="Pilih Gaya Font">
-        <option value="normal" selected>Normal</option>
-        <option value="bold">Tebal</option>
-        <option value="italic">Miring</option>
-        <option value="underline">Garis Bawah</option>
-      </select>
-    </div>
-
-    <div class="slider-container">
-      <label for="fontSizeSlider">Ukuran Font:</label>
-      <input type="range" id="fontSizeSlider" min="10" max="100" value="24" step="1">
-      <span class="value" id="fontSizeValue">24px</span>
-    </div>
-
-    <div class="font-selector">
-      <p style="text-align: center; margin-bottom: 5px;">Pilih Jenis Font:</p>
-      <div style="text-align: center;">
-        <div class="font-option font-arial active" data-font="Arial, sans-serif">Arial</div>
-        <div class="font-option font-times" data-font="'Times New Roman', Times, serif">Times</div>
-        <div class="font-option font-courier" data-font="'Courier New', Courier, monospace">Courier</div>
-        <div class="font-option font-verdana" data-font="Verdana, Geneva, sans-serif">Verdana</div>
-        <div class="font-option font-georgia" data-font="Georgia, serif">Georgia</div>
-        <div class="font-option font-comic" data-font="'Comic Sans MS', cursive, sans-serif">Comic</div>
-      </div>
-    </div>
-
-    <div>
-      <p style="text-align: center; margin-bottom: 5px;">Pilih Skema Warna:</p>
-      <div class="color-palette">
-        <div class="palette-option rainbow active" data-palette="rainbow" title="Rainbow"></div>
-        <div class="palette-option pastel" data-palette="pastel" title="Pastel"></div>
-        <div class="palette-option neon" data-palette="neon" title="Neon"></div>
-        <div class="palette-option sunset" data-palette="sunset" title="Sunset"></div>
-        <div class="palette-option ocean" data-palette="ocean" title="Ocean"></div>
-      </div>
-    </div>
-
-    <textarea id="inputText" rows="5" cols="60" placeholder="Masukkan teks kamu di sini..."></textarea>
-    <br /><br /> 
-    <div style="text-align: center; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
-      <button onclick="generate(false)">🎨 Generate</button> 
-      <button onclick="generate(true)">🔄 Randomize</button> 
-      <button onclick="copyToClipboard()">📋 Copy to Clipboard</button> 
-    </div>
+    <div class="material-card">
+      <h2 class="section-title">Output</h2>
     <div class="output-wrapper">
       <div id="output" class="output-container"></div>
       <div class="loading-overlay" id="loadingOverlay">
         <div class="loading-spinner"></div>
+        </div>
       </div>
     </div>
   </div>
  
-  <footer>
-    <p>© 2025 Pelangi Huruf Generator | Version 1.0 | Made with ❤️ by <a href="https://github.com/jundy779" target="_blank">Fusionify Digital</a></p>
-  </footer>
+  <script>
+    // Optimasi performa dengan penggunaan konstanta dan caching DOM elements
+    // untuk mengurangi DOM queries berulang
+    const DOM = {
+      inputText: document.getElementById('inputText'),
+      output: document.getElementById('output'),
+      fontSizeSlider: document.getElementById('fontSizeSlider'),
+      fontSizeValue: document.getElementById('fontSizeValue'),
+      sliderValuePopup: document.getElementById('sliderValuePopup'),
+      sliderTicks: document.getElementById('sliderTicks'),
+      loadingOverlay: document.getElementById('loadingOverlay'),
+      themeToggle: document.getElementById('themeToggle'),
+      viewModeToggle: document.getElementById('viewModeToggle'),
+      renderModeToggle: document.getElementById('renderModeToggle'),
+      disclaimerToggle: document.getElementById('disclaimerToggle'),
+      settingsBtn: document.getElementById('settingsBtn'),
+      settingsMenu: document.getElementById('settingsMenu')
+    };
+    
+    // Debounce function untuk membatasi pemanggilan fungsi berulang
+    // dan meningkatkan performa aplikasi
+    function debounce(func, wait) {
+      let timeout;
+      return function executedFunction(...args) {
+        const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+      };
+    }
+    
+    // Gradasi warna pelangi berdasarkan referensi
+    const rainbowColors = [
+      "#ff0000", "#ff3300", "#ff6600", "#ff9900", "#ffcc00", "#ffff00", 
+      "#ccff00", "#99ff00", "#66ff00", "#33ff00", "#00ff00", "#00ff33", 
+      "#00ff66", "#00ff99", "#00ffcc", "#00ffff", "#00ccff", "#0099ff", 
+      "#0066ff", "#0033ff", "#0000ff", "#3300ff", "#6600ff", "#9900ff", 
+      "#cc00ff", "#ff00ff", "#ff00cc", "#ff0099", "#ff0066", "#ff0033"
+    ];
+    
+    // Palet warna lainnya
+    const colorPalettes = {
+      rainbow: rainbowColors,
+      pastel: [
+        "#ffaacc", "#ffccdd", "#ccddbb", "#bbeeff", "#aa22dd", "#ffaacc",
+        "#ffccdd", "#ccddbb", "#bbeeff", "#aa22dd", "#ffaacc", "#ffccdd"
+      ],
+      neon: [
+        "#ff00ff", "#ff33ff", "#ff66ff", "#ff99ff", "#ffccff", "#ccffff",
+        "#99ffff", "#66ffff", "#33ffff", "#00ffff", "#00ffcc", "#00ff99",
+        "#00ff66", "#00ff33", "#00ff00", "#33ff00", "#66ff00", "#99ff00", 
+        "#ccff00", "#ffff00", "#ffcc00", "#ff9900", "#ff6600", "#ff3300"
+      ],
+      sunset: [
+        "#ff7700", "#ff8800", "#ff9900", "#ffaa00", "#ffbb00", "#ffcc00",
+        "#ffdd00", "#ffee00", "#ffff00", "#ffff33", "#ffff66", "#ffff99"
+      ],
+      ocean: [
+        "#006699", "#007799", "#008899", "#009999", "#00aacc", "#00bbcc",
+        "#00cccc", "#00ccbb", "#00ccaa", "#00cc99", "#00cc88", "#00cc77"
+      ],
+      "forest-dream": [
+        "#004d00", "#006400", "#007800", "#008c00", "#00a000", "#00b400", 
+        "#00c800", "#00dc00", "#00f000", "#32cd32", "#228b22", "#2e8b57"
+      ],
+      "sakura-bloom": [
+        "#ffd1dc", "#ffb7c5", "#ff9db2", "#ff839f", "#ff698c", "#ff4f79", 
+        "#f4c2c2", "#ffb6c1", "#ffa6c9", "#d8b2d1", "#c9a9c8", "#9966cc"
+      ],
+      "glacier": [
+        "#e0ffff", "#b0e0e6", "#87ceeb", "#b0c4de", "#6495ed", "#4682b4", 
+        "#5f9ea0", "#008b8b", "#00ced1", "#20b2aa", "#40e0d0", "#afeeee"
+      ],
+      "rainbow-shine": [
+        "#ff0000", "#ff4500", "#ffa500", "#ffd700", "#ffff00", "#adff2f", 
+        "#00ff00", "#00fa9a", "#00ffff", "#1e90ff", "#0000ff", "#8a2be2", 
+        "#ff00ff", "#ff69b4"
+      ],
+      "pastel-candy": [
+        "#ffb6c1", "#ffcccc", "#ffc8dd", "#ffcba4", "#ffffcc", "#e6ffcc", 
+        "#ccffcc", "#ccffe6", "#ccffff", "#cce6ff", "#ccccff", "#e6ccff"
+      ],
+      "aurora-borealis": [
+        "#98ff98", "#00ff7f", "#00fa9a", "#00ffff", "#00bfff", "#1e90ff", 
+        "#9370db", "#8a2be2", "#ee82ee", "#da70d6", "#ff00ff", "#c71585"
+      ],
+      "galaxy": [
+        "#000033", "#000066", "#0000cc", "#3333ff", "#6633ff", "#9933ff", 
+        "#cc33ff", "#ff33ff", "#ff33cc", "#ff3399", "#ff3366", "#9966cc"
+      ],
+      "lava-flow": [
+        "#8b0000", "#b22222", "#cd5c5c", "#dc143c", "#ff0000", "#ff4500", 
+        "#ff6347", "#ff7f50", "#ff8c00", "#ffa500", "#ffd700", "#ffff00"
+      ]
+    };
+    
+    // Palet aktif saat ini
+    let cssColors = colorPalettes.rainbow;
+    let currentPalette = "rainbow";
+    let currentFont = "Arial, sans-serif";
+    let currentFontStyle = "normal"; // default value
+    let useGroupedMode = false; // false = mode per karakter (default), true = mode Dikelompok
+    let showDisclaimer = true; // Tambahkan disclaimer peringatan standar
 
-  <script>document.write(unescape('%3C%73%63%72%69%70%74%3E%20%0A%20%20%20%20%2F%2F%20%47%72%61%64%61%73%69%20%77%61%72%6E%61%20%70%65%6C%61%6E%67%69%20%62%65%72%64%61%73%61%72%6B%61%6E%20%72%65%66%65%72%65%6E%73%69%0A%20%20%20%20%63%6F%6E%73%74%20%72%61%69%6E%62%6F%77%43%6F%6C%6F%72%73%20%3D%20%5B%0A%20%20%20%20%20%20%22%23%66%66%30%30%30%30%22%2C%20%22%23%66%66%30%36%30%30%22%2C%20%22%23%66%66%30%63%30%30%22%2C%20%22%23%66%66%31%32%30%30%22%2C%20%22%23%66%66%31%38%30%30%22%2C%20%22%23%66%66%31%65%30%30%22%2C%20%0A%20%20%20%20%20%20%22%23%66%66%32%34%30%30%22%2C%20%22%23%66%66%32%61%30%30%22%2C%20%22%23%66%66%33%30%30%30%22%2C%20%22%23%66%66%33%36%30%30%22%2C%20%22%23%66%66%33%63%30%30%22%2C%20%22%23%66%66%34%33%30%30%22%2C%20%0A%20%20%20%20%20%20%22%23%66%66%34%39%30%30%22%2C%20%22%23%66%66%34%66%30%30%22%2C%20%22%23%66%66%35%35%30%30%22%2C%20%22%23%66%66%35%62%30%30%22%2C%20%22%23%66%66%36%31%30%30%22%2C%20%22%23%66%66%36%37%30%30%22%2C%20%0A%20%20%20%20%20%20%22%23%66%66%36%64%30%30%22%2C%20%22%23%66%66%37%33%30%30%22%2C%20%22%23%66%66%37%39%30%30%22%2C%20%22%23%66%66%37%66%30%30%22%2C%20%22%23%66%66%38%35%30%30%22%2C%20%22%23%66%66%38%62%30%30%22%2C%20%0A%20%20%20%20%20%20%22%23%66%66%39%31%30%30%22%2C%20%22%23%66%66%39%37%30%30%22%2C%20%22%23%66%66%39%64%30%30%22%2C%20%22%23%66%66%61%34%30%30%22%2C%20%22%23%66%66%61%61%30%30%22%2C%20%22%23%66%66%62%30%30%30%22%2C%20%0A%20%20%20%20%20%20%22%23%66%66%62%36%30%30%22%2C%20%22%23%66%66%62%63%30%30%22%2C%20%22%23%66%66%63%32%30%30%22%2C%20%22%23%66%66%63%38%30%30%22%2C%20%22%23%66%66%63%65%30%30%22%2C%20%22%23%66%66%64%34%30%30%22%2C%20%0A%20%20%20%20%20%20%22%23%66%66%64%61%30%30%22%2C%20%22%23%66%66%65%31%30%30%22%2C%20%22%23%66%66%65%37%30%30%22%2C%20%22%23%66%66%65%64%30%30%22%2C%20%22%23%66%66%66%33%30%30%22%2C%20%22%23%66%66%66%39%30%30%22%2C%20%0A%20%20%20%20%20%20%22%23%66%66%66%66%30%30%22%2C%20%22%23%66%39%66%66%30%30%22%2C%20%22%23%66%33%66%66%30%30%22%2C%20%22%23%65%37%66%66%30%30%22%2C%20%22%23%64%62%66%66%30%30%22%2C%20%22%23%63%65%66%66%30%30%22%2C%20%0A%20%20%20%20%20%20%22%23%63%32%66%66%30%30%22%2C%20%22%23%62%36%66%66%30%30%22%2C%20%22%23%61%61%66%66%30%30%22%2C%20%22%23%39%65%66%66%30%30%22%2C%20%22%23%39%32%66%66%30%30%22%2C%20%22%23%38%36%66%66%30%30%22%2C%20%0A%20%20%20%20%20%20%22%23%37%39%66%66%30%30%22%2C%20%22%23%36%64%66%66%30%30%22%2C%20%22%23%36%31%66%66%30%30%22%2C%20%22%23%35%35%66%66%30%30%22%2C%20%22%23%34%39%66%66%30%30%22%2C%20%22%23%33%64%66%66%30%30%22%2C%20%0A%20%20%20%20%20%20%22%23%33%31%66%66%30%30%22%2C%20%22%23%32%34%66%66%30%30%22%2C%20%22%23%31%38%66%66%30%30%22%2C%20%22%23%30%63%66%66%30%30%22%2C%20%22%23%30%30%66%66%30%30%22%2C%0A%20%20%20%20%20%20%22%23%30%30%66%66%30%63%22%2C%20%22%23%30%30%66%66%31%38%22%2C%20%22%23%30%30%66%66%32%34%22%2C%20%22%23%30%30%66%66%33%31%22%2C%20%22%23%30%30%66%66%33%64%22%2C%20%22%23%30%30%66%66%34%39%22%2C%20%0A%20%20%20%20%20%20%22%23%30%30%66%66%35%35%22%2C%20%22%23%30%30%66%66%36%31%22%2C%20%22%23%30%30%66%66%36%64%22%2C%20%22%23%30%30%66%66%37%39%22%2C%20%22%23%30%30%66%66%38%36%22%2C%20%22%23%30%30%66%66%39%32%22%2C%20%0A%20%20%20%20%20%20%22%23%30%30%66%66%39%65%22%2C%20%22%23%30%30%66%66%61%61%22%2C%20%22%23%30%30%66%66%62%36%22%2C%20%22%23%30%30%66%66%63%32%22%2C%20%22%23%30%30%66%66%63%65%22%2C%20%22%23%30%30%66%66%64%62%22%2C%20%0A%20%20%20%20%20%20%22%23%30%30%66%66%65%37%22%2C%20%22%23%30%30%66%66%66%33%22%2C%20%22%23%30%30%66%66%66%66%22%2C%0A%20%20%20%20%20%20%22%23%30%30%66%33%66%66%22%2C%20%22%23%30%30%65%37%66%66%22%2C%20%22%23%30%30%64%62%66%66%22%2C%20%22%23%30%30%63%65%66%66%22%2C%20%22%23%30%30%63%32%66%66%22%2C%20%22%23%30%30%62%36%66%66%22%2C%20%0A%20%20%20%20%20%20%22%23%30%30%61%61%66%66%22%2C%20%22%23%30%30%39%65%66%66%22%2C%20%22%23%30%30%39%32%66%66%22%2C%20%22%23%30%30%38%36%66%66%22%2C%20%22%23%30%30%37%39%66%66%22%2C%20%22%23%30%30%36%64%66%66%22%2C%20%0A%20%20%20%20%20%20%22%23%30%30%36%31%66%66%22%2C%20%22%23%30%30%35%35%66%66%22%2C%20%22%23%30%30%34%39%66%66%22%2C%20%22%23%30%30%33%64%66%66%22%2C%20%22%23%30%30%33%31%66%66%22%2C%20%22%23%30%30%32%34%66%66%22%2C%20%0A%20%20%20%20%20%20%22%23%30%30%31%38%66%66%22%2C%20%22%23%30%30%30%63%66%66%22%2C%20%22%23%30%30%30%30%66%66%22%2C%0A%20%20%20%20%20%20%22%23%30%37%30%30%66%66%22%2C%20%22%23%30%65%30%30%66%66%22%2C%20%22%23%31%35%30%30%66%66%22%2C%20%22%23%31%63%30%30%66%66%22%2C%20%22%23%32%33%30%30%66%66%22%2C%20%22%23%32%61%30%30%66%66%22%2C%20%0A%20%20%20%20%20%20%22%23%33%31%30%30%66%66%22%2C%20%22%23%33%38%30%30%66%66%22%2C%20%22%23%33%66%30%30%66%66%22%2C%20%22%23%34%36%30%30%66%66%22%2C%20%22%23%34%63%30%30%66%66%22%2C%20%22%23%35%33%30%30%66%66%22%2C%20%0A%20%20%20%20%20%20%22%23%35%61%30%30%66%66%22%2C%20%22%23%36%31%30%30%66%66%22%2C%20%22%23%36%38%30%30%66%66%22%2C%20%22%23%36%66%30%30%66%66%22%2C%20%22%23%37%36%30%30%66%66%22%2C%20%22%23%37%64%30%30%66%66%22%2C%20%0A%20%20%20%20%20%20%22%23%38%34%30%30%66%66%22%2C%20%22%23%38%62%30%30%66%66%22%2C%20%22%23%39%31%30%30%66%33%22%2C%20%22%23%39%36%30%30%65%37%22%2C%20%22%23%39%63%30%30%64%62%22%2C%20%22%23%61%31%30%30%63%65%22%2C%20%0A%20%20%20%20%20%20%22%23%61%37%30%30%63%32%22%2C%20%22%23%61%63%30%30%62%36%22%2C%20%22%23%62%32%30%30%61%61%22%2C%20%22%23%62%37%30%30%39%65%22%2C%20%22%23%62%64%30%30%39%32%22%2C%20%22%23%63%32%30%30%38%36%22%2C%20%0A%20%20%20%20%20%20%22%23%63%38%30%30%37%39%22%2C%20%22%23%63%64%30%30%36%64%22%2C%20%22%23%64%33%30%30%36%31%22%2C%20%22%23%64%38%30%30%35%35%22%2C%20%22%23%64%65%30%30%34%39%22%2C%20%22%23%65%33%30%30%33%64%22%2C%20%0A%20%20%20%20%20%20%22%23%65%39%30%30%33%31%22%2C%20%22%23%65%65%30%30%32%34%22%2C%20%22%23%66%34%30%30%31%38%22%2C%20%22%23%66%39%30%30%30%63%22%0A%20%20%20%20%5D%3B%0A%20%20%20%20%0A%20%20%20%20%2F%2F%20%50%61%6C%65%74%20%77%61%72%6E%61%20%6C%61%69%6E%6E%79%61%0A%20%20%20%20%63%6F%6E%73%74%20%63%6F%6C%6F%72%50%61%6C%65%74%74%65%73%20%3D%20%7B%0A%20%20%20%20%20%20%72%61%69%6E%62%6F%77%3A%20%72%61%69%6E%62%6F%77%43%6F%6C%6F%72%73%2C%0A%20%20%20%20%20%20%70%61%73%74%65%6C%3A%20%5B%0A%20%20%20%20%20%20%20%20%22%23%66%66%61%66%63%63%22%2C%20%22%23%66%66%63%38%64%64%22%2C%20%22%23%63%64%62%34%64%62%22%2C%20%22%23%62%64%65%30%66%65%22%2C%20%22%23%61%32%64%32%66%66%22%2C%20%22%23%66%66%61%66%63%63%22%2C%0A%20%20%20%20%20%20%20%20%22%23%66%66%63%38%64%64%22%2C%20%22%23%63%64%62%34%64%62%22%2C%20%22%23%62%64%65%30%66%65%22%2C%20%22%23%61%32%64%32%66%66%22%2C%20%22%23%66%66%61%66%63%63%22%2C%20%22%23%66%66%63%38%64%64%22%0A%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%6E%65%6F%6E%3A%20%5B%0A%20%20%20%20%20%20%20%20%22%23%66%66%30%30%66%66%22%2C%20%22%23%66%66%33%33%66%66%22%2C%20%22%23%66%66%36%36%66%66%22%2C%20%22%23%66%66%39%39%66%66%22%2C%20%22%23%66%66%63%63%66%66%22%2C%20%22%23%63%63%66%66%66%66%22%2C%0A%20%20%20%20%20%20%20%20%22%23%39%39%66%66%66%66%22%2C%20%22%23%36%36%66%66%66%66%22%2C%20%22%23%33%33%66%66%66%66%22%2C%20%22%23%30%30%66%66%66%66%22%2C%20%22%23%30%30%66%66%63%63%22%2C%20%22%23%30%30%66%66%39%39%22%2C%0A%20%20%20%20%20%20%20%20%22%23%30%30%66%66%36%36%22%2C%20%22%23%30%30%66%66%33%33%22%2C%20%22%23%30%30%66%66%30%30%22%2C%20%22%23%33%33%66%66%30%30%22%2C%20%22%23%36%36%66%66%30%30%22%2C%20%22%23%39%39%66%66%30%30%22%2C%20%0A%20%20%20%20%20%20%20%20%22%23%63%63%66%66%30%30%22%2C%20%22%23%66%66%66%66%30%30%22%2C%20%22%23%66%66%63%63%30%30%22%2C%20%22%23%66%66%39%39%30%30%22%2C%20%22%23%66%66%36%36%30%30%22%2C%20%22%23%66%66%33%33%30%30%22%0A%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%73%75%6E%73%65%74%3A%20%5B%0A%20%20%20%20%20%20%20%20%22%23%66%66%37%62%30%30%22%2C%20%22%23%66%66%38%38%30%30%22%2C%20%22%23%66%66%39%35%30%30%22%2C%20%22%23%66%66%61%61%30%30%22%2C%20%22%23%66%66%62%37%30%30%22%2C%20%22%23%66%66%63%33%30%30%22%2C%0A%20%20%20%20%20%20%20%20%22%23%66%66%64%30%30%30%22%2C%20%22%23%66%66%64%64%30%30%22%2C%20%22%23%66%66%65%61%30%30%22%2C%20%22%23%66%66%66%37%30%30%22%2C%20%22%23%66%37%66%66%30%30%22%2C%20%22%23%65%61%66%66%30%30%22%2C%0A%20%20%20%20%20%20%20%20%22%23%64%64%66%66%30%30%22%2C%20%22%23%64%30%66%66%30%30%22%2C%20%22%23%63%33%66%66%30%30%22%2C%20%22%23%62%37%66%66%30%30%22%2C%20%22%23%61%61%66%66%30%30%22%2C%20%22%23%39%35%66%66%30%30%22%2C%0A%20%20%20%20%20%20%20%20%22%23%38%38%66%66%30%30%22%2C%20%22%23%37%62%66%66%30%30%22%0A%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%6F%63%65%61%6E%3A%20%5B%0A%20%20%20%20%20%20%20%20%22%23%30%30%36%36%39%39%22%2C%20%22%23%30%30%37%37%62%33%22%2C%20%22%23%30%30%38%38%63%63%22%2C%20%22%23%30%30%39%39%63%63%22%2C%20%22%23%30%30%61%61%63%63%22%2C%20%22%23%30%30%62%62%63%63%22%2C%0A%20%20%20%20%20%20%20%20%22%23%30%30%63%63%63%63%22%2C%20%22%23%30%30%63%63%62%62%22%2C%20%22%23%30%30%63%63%61%61%22%2C%20%22%23%30%30%63%63%39%39%22%2C%20%22%23%30%30%63%63%38%38%22%2C%20%22%23%30%30%63%63%37%37%22%2C%0A%20%20%20%20%20%20%20%20%22%23%30%30%63%63%36%36%22%2C%20%22%23%30%30%62%62%37%37%22%2C%20%22%23%30%30%61%61%38%38%22%2C%20%22%23%30%30%39%39%39%39%22%2C%20%22%23%30%30%38%38%61%61%22%2C%20%22%23%30%30%37%37%62%62%22%2C%0A%20%20%20%20%20%20%20%20%22%23%30%30%36%36%63%63%22%0A%20%20%20%20%20%20%5D%0A%20%20%20%20%7D%3B%0A%20%20%20%20%0A%20%20%20%20%2F%2F%20%50%61%6C%65%74%20%61%6B%74%69%66%20%73%61%61%74%20%69%6E%69%0A%20%20%20%20%6C%65%74%20%63%73%73%43%6F%6C%6F%72%73%20%3D%20%63%6F%6C%6F%72%50%61%6C%65%74%74%65%73%2E%72%61%69%6E%62%6F%77%3B%0A%20%20%20%20%6C%65%74%20%63%75%72%72%65%6E%74%50%61%6C%65%74%74%65%20%3D%20%22%72%61%69%6E%62%6F%77%22%3B%0A%20%20%20%20%6C%65%74%20%63%75%72%72%65%6E%74%46%6F%6E%74%20%3D%20%22%41%72%69%61%6C%2C%20%73%61%6E%73%2D%73%65%72%69%66%22%3B%0A%0A%20%20%20%20%66%75%6E%63%74%69%6F%6E%20%67%65%74%52%61%6E%64%6F%6D%43%6F%6C%6F%72%28%29%20%7B%20%0A%20%20%20%20%20%20%63%6F%6E%73%74%20%69%6E%64%65%78%20%3D%20%4D%61%74%68%2E%66%6C%6F%6F%72%28%4D%61%74%68%2E%72%61%6E%64%6F%6D%28%29%20%2A%20%63%73%73%43%6F%6C%6F%72%73%2E%6C%65%6E%67%74%68%29%3B%20%0A%20%20%20%20%20%20%72%65%74%75%72%6E%20%63%73%73%43%6F%6C%6F%72%73%5B%69%6E%64%65%78%5D%3B%20%0A%20%20%20%20%7D%20%0A%20%0A%20%20%20%20%66%75%6E%63%74%69%6F%6E%20%67%65%6E%65%72%61%74%65%28%69%73%52%61%6E%64%6F%6D%29%20%7B%20%0A%20%20%20%20%20%20%63%6F%6E%73%74%20%69%6E%70%75%74%20%3D%20%64%6F%63%75%6D%65%6E%74%2E%67%65%74%45%6C%65%6D%65%6E%74%42%79%49%64%28%22%69%6E%70%75%74%54%65%78%74%22%29%2E%76%61%6C%75%65%3B%20%0A%20%20%20%20%20%20%63%6F%6E%73%74%20%66%6F%6E%74%53%74%79%6C%65%20%3D%20%64%6F%63%75%6D%65%6E%74%2E%67%65%74%45%6C%65%6D%65%6E%74%42%79%49%64%28%22%66%6F%6E%74%53%74%79%6C%65%53%65%6C%65%63%74%22%29%2E%76%61%6C%75%65%3B%0A%20%20%20%20%20%20%63%6F%6E%73%74%20%66%6F%6E%74%53%69%7A%65%20%3D%20%64%6F%63%75%6D%65%6E%74%2E%67%65%74%45%6C%65%6D%65%6E%74%42%79%49%64%28%22%66%6F%6E%74%53%69%7A%65%53%6C%69%64%65%72%22%29%2E%76%61%6C%75%65%3B%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%2F%2F%20%53%68%6F%77%20%6C%6F%61%64%69%6E%67%20%69%66%20%74%65%78%74%20%69%73%20%6C%6F%6E%67%0A%20%20%20%20%20%20%63%6F%6E%73%74%20%6C%6F%61%64%69%6E%67%4F%76%65%72%6C%61%79%20%3D%20%64%6F%63%75%6D%65%6E%74%2E%67%65%74%45%6C%65%6D%65%6E%74%42%79%49%64%28%22%6C%6F%61%64%69%6E%67%4F%76%65%72%6C%61%79%22%29%3B%0A%20%20%20%20%20%20%69%66%20%28%69%6E%70%75%74%2E%6C%65%6E%67%74%68%20%3E%20%35%30%30%29%20%7B%0A%20%20%20%20%20%20%20%20%6C%6F%61%64%69%6E%67%4F%76%65%72%6C%61%79%2E%73%74%79%6C%65%2E%76%69%73%69%62%69%6C%69%74%79%20%3D%20%22%76%69%73%69%62%6C%65%22%3B%0A%20%20%20%20%20%20%20%20%6C%6F%61%64%69%6E%67%4F%76%65%72%6C%61%79%2E%73%74%79%6C%65%2E%6F%70%61%63%69%74%79%20%3D%20%22%31%22%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2F%2F%20%55%73%65%20%73%65%74%54%69%6D%65%6F%75%74%20%74%6F%20%61%6C%6C%6F%77%20%74%68%65%20%55%49%20%74%6F%20%75%70%64%61%74%65%20%62%65%66%6F%72%65%20%70%72%6F%63%65%73%73%69%6E%67%0A%20%20%20%20%20%20%20%20%73%65%74%54%69%6D%65%6F%75%74%28%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%67%65%6E%65%72%61%74%65%54%65%78%74%28%69%6E%70%75%74%2C%20%66%6F%6E%74%53%74%79%6C%65%2C%20%66%6F%6E%74%53%69%7A%65%2C%20%69%73%52%61%6E%64%6F%6D%29%3B%0A%20%20%20%20%20%20%20%20%20%20%6C%6F%61%64%69%6E%67%4F%76%65%72%6C%61%79%2E%73%74%79%6C%65%2E%76%69%73%69%62%69%6C%69%74%79%20%3D%20%22%68%69%64%64%65%6E%22%3B%0A%20%20%20%20%20%20%20%20%20%20%6C%6F%61%64%69%6E%67%4F%76%65%72%6C%61%79%2E%73%74%79%6C%65%2E%6F%70%61%63%69%74%79%20%3D%20%22%30%22%3B%0A%20%20%20%20%20%20%20%20%7D%2C%20%35%30%29%3B%0A%20%20%20%20%20%20%7D%20%65%6C%73%65%20%7B%0A%20%20%20%20%20%20%20%20%67%65%6E%65%72%61%74%65%54%65%78%74%28%69%6E%70%75%74%2C%20%66%6F%6E%74%53%74%79%6C%65%2C%20%66%6F%6E%74%53%69%7A%65%2C%20%69%73%52%61%6E%64%6F%6D%29%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20%66%75%6E%63%74%69%6F%6E%20%67%65%6E%65%72%61%74%65%54%65%78%74%28%69%6E%70%75%74%2C%20%66%6F%6E%74%53%74%79%6C%65%2C%20%66%6F%6E%74%53%69%7A%65%2C%20%69%73%52%61%6E%64%6F%6D%29%20%7B%0A%20%20%20%20%20%20%6C%65%74%20%6F%75%74%70%75%74%20%3D%20%22%22%3B%20%0A%20%20%20%20%20%20%66%6F%72%20%28%6C%65%74%20%69%20%3D%20%30%3B%20%69%20%3C%20%69%6E%70%75%74%2E%6C%65%6E%67%74%68%3B%20%69%2B%2B%29%20%7B%20%0A%20%20%20%20%20%20%20%20%63%6F%6E%73%74%20%63%68%61%72%20%3D%20%69%6E%70%75%74%5B%69%5D%3B%20%0A%20%20%20%20%20%20%20%20%69%66%20%28%63%68%61%72%20%3D%3D%3D%20%22%5C%6E%22%29%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%6F%75%74%70%75%74%20%2B%3D%20%22%3C%62%72%3E%5C%6E%22%3B%20%0A%20%20%20%20%20%20%20%20%7D%20%65%6C%73%65%20%69%66%20%28%63%68%61%72%20%3D%3D%3D%20%22%20%22%29%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%6F%75%74%70%75%74%20%2B%3D%20%60%3C%73%70%61%6E%20%73%74%79%6C%65%3D%22%63%6F%6C%6F%72%3A%23%62%62%62%3B%22%3E%20%3C%2F%73%70%61%6E%3E%60%3B%20%0A%20%20%20%20%20%20%20%20%7D%20%65%6C%73%65%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%63%6F%6E%73%74%20%63%6F%6C%6F%72%20%3D%20%69%73%52%61%6E%64%6F%6D%20%3F%20%67%65%74%52%61%6E%64%6F%6D%43%6F%6C%6F%72%28%29%20%3A%20%63%73%73%43%6F%6C%6F%72%73%5B%69%20%25%20%63%73%73%43%6F%6C%6F%72%73%2E%6C%65%6E%67%74%68%5D%3B%20%0A%20%20%20%20%20%20%20%20%20%20%6C%65%74%20%73%74%79%6C%65%20%3D%20%60%63%6F%6C%6F%72%3A%24%7B%63%6F%6C%6F%72%7D%3B%20%74%65%78%74%2D%73%68%61%64%6F%77%3A%20%30%70%78%20%30%70%78%20%31%70%78%20%72%67%62%61%28%30%2C%30%2C%30%2C%30%2E%32%29%3B%20%66%6F%6E%74%2D%73%69%7A%65%3A%24%7B%66%6F%6E%74%53%69%7A%65%7D%70%78%3B%20%66%6F%6E%74%2D%66%61%6D%69%6C%79%3A%24%7B%63%75%72%72%65%6E%74%46%6F%6E%74%7D%3B%60%3B%0A%20%20%20%20%20%20%20%20%20%20%69%66%20%28%66%6F%6E%74%53%74%79%6C%65%20%3D%3D%3D%20%22%62%6F%6C%64%22%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%73%74%79%6C%65%20%2B%3D%20%22%20%66%6F%6E%74%2D%77%65%69%67%68%74%3A%20%62%6F%6C%64%3B%22%3B%0A%20%20%20%20%20%20%20%20%20%20%7D%20%65%6C%73%65%20%69%66%20%28%66%6F%6E%74%53%74%79%6C%65%20%3D%3D%3D%20%22%69%74%61%6C%69%63%22%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%73%74%79%6C%65%20%2B%3D%20%22%20%66%6F%6E%74%2D%73%74%79%6C%65%3A%20%69%74%61%6C%69%63%3B%22%3B%0A%20%20%20%20%20%20%20%20%20%20%7D%20%65%6C%73%65%20%69%66%20%28%66%6F%6E%74%53%74%79%6C%65%20%3D%3D%3D%20%22%75%6E%64%65%72%6C%69%6E%65%22%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%73%74%79%6C%65%20%2B%3D%20%22%20%74%65%78%74%2D%64%65%63%6F%72%61%74%69%6F%6E%3A%20%75%6E%64%65%72%6C%69%6E%65%3B%22%3B%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%6F%75%74%70%75%74%20%2B%3D%20%60%3C%73%70%61%6E%20%73%74%79%6C%65%3D%22%24%7B%73%74%79%6C%65%7D%22%3E%24%7B%63%68%61%72%7D%3C%2F%73%70%61%6E%3E%60%3B%20%0A%20%20%20%20%20%20%20%20%7D%20%0A%20%20%20%20%20%20%7D%20%0A%20%20%20%20%20%20%64%6F%63%75%6D%65%6E%74%2E%67%65%74%45%6C%65%6D%65%6E%74%42%79%49%64%28%22%6F%75%74%70%75%74%22%29%2E%69%6E%6E%65%72%48%54%4D%4C%20%3D%20%6F%75%74%70%75%74%3B%20%0A%20%20%20%20%7D%0A%20%0A%20%20%20%20%66%75%6E%63%74%69%6F%6E%20%63%6F%70%79%54%6F%43%6C%69%70%62%6F%61%72%64%28%29%20%7B%20%0A%20%20%20%20%20%20%63%6F%6E%73%74%20%74%65%6D%70%20%3D%20%64%6F%63%75%6D%65%6E%74%2E%63%72%65%61%74%65%45%6C%65%6D%65%6E%74%28%22%74%65%78%74%61%72%65%61%22%29%3B%20%0A%20%20%20%20%20%20%74%65%6D%70%2E%76%61%6C%75%65%20%3D%20%64%6F%63%75%6D%65%6E%74%2E%67%65%74%45%6C%65%6D%65%6E%74%42%79%49%64%28%22%6F%75%74%70%75%74%22%29%2E%69%6E%6E%65%72%48%54%4D%4C%3B%20%0A%20%20%20%20%20%20%64%6F%63%75%6D%65%6E%74%2E%62%6F%64%79%2E%61%70%70%65%6E%64%43%68%69%6C%64%28%74%65%6D%70%29%3B%20%0A%20%20%20%20%20%20%74%65%6D%70%2E%73%65%6C%65%63%74%28%29%3B%20%0A%20%20%20%20%20%20%64%6F%63%75%6D%65%6E%74%2E%65%78%65%63%43%6F%6D%6D%61%6E%64%28%22%63%6F%70%79%22%29%3B%20%0A%20%20%20%20%20%20%64%6F%63%75%6D%65%6E%74%2E%62%6F%64%79%2E%72%65%6D%6F%76%65%43%68%69%6C%64%28%74%65%6D%70%29%3B%20%0A%20%20%20%20%20%20%61%6C%65%72%74%28%22%05%20%54%65%6B%73%20%62%65%72%68%61%73%69%6C%20%64%69%73%61%6C%69%6E%20%6B%65%20%63%6C%69%70%62%6F%61%72%64%21%22%29%3B%20%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20%2F%2F%20%54%68%65%6D%65%20%74%6F%67%67%6C%65%20%66%75%6E%63%74%69%6F%6E%61%6C%69%74%79%0A%20%20%20%20%63%6F%6E%73%74%20%74%68%65%6D%65%54%6F%67%67%6C%65%20%3D%20%64%6F%63%75%6D%65%6E%74%2E%67%65%74%45%6C%65%6D%65%6E%74%42%79%49%64%28%27%74%68%65%6D%65%54%6F%67%67%6C%65%27%29%3B%0A%20%20%20%20%0A%20%20%20%20%2F%2F%20%43%68%65%63%6B%20%66%6F%72%20%73%61%76%65%64%20%74%68%65%6D%65%20%70%72%65%66%65%72%65%6E%63%65%20%6F%72%20%75%73%65%20%70%72%65%66%65%72%72%65%64%20%63%6F%6C%6F%72%20%73%63%68%65%6D%65%0A%20%20%20%20%63%6F%6E%73%74%20%73%61%76%65%64%54%68%65%6D%65%20%3D%20%6C%6F%63%61%6C%53%74%6F%72%61%67%65%2E%67%65%74%49%74%65%6D%28%27%74%68%65%6D%65%27%29%3B%0A%20%20%20%20%69%66%20%28%73%61%76%65%64%54%68%65%6D%65%20%3D%3D%3D%20%27%64%61%72%6B%27%29%20%7B%0A%20%20%20%20%20%20%64%6F%63%75%6D%65%6E%74%2E%64%6F%63%75%6D%65%6E%74%45%6C%65%6D%65%6E%74%2E%73%65%74%41%74%74%72%69%62%75%74%65%28%27%64%61%74%61%2D%74%68%65%6D%65%27%2C%20%27%64%61%72%6B%27%29%3B%0A%20%20%20%20%20%20%74%68%65%6D%65%54%6F%67%67%6C%65%2E%63%68%65%63%6B%65%64%20%3D%20%74%72%75%65%3B%0A%20%20%20%20%7D%20%65%6C%73%65%20%69%66%20%28%73%61%76%65%64%54%68%65%6D%65%20%3D%3D%3D%20%27%6C%69%67%68%74%27%29%20%7B%0A%20%20%20%20%20%20%64%6F%63%75%6D%65%6E%74%2E%64%6F%63%75%6D%65%6E%74%45%6C%65%6D%65%6E%74%2E%73%65%74%41%74%74%72%69%62%75%74%65%28%27%64%61%74%61%2D%74%68%65%6D%65%27%2C%20%27%6C%69%67%68%74%27%29%3B%0A%20%20%20%20%20%20%74%68%65%6D%65%54%6F%67%67%6C%65%2E%63%68%65%63%6B%65%64%20%3D%20%66%61%6C%73%65%3B%0A%20%20%20%20%7D%20%65%6C%73%65%20%69%66%20%28%77%69%6E%64%6F%77%2E%6D%61%74%63%68%4D%65%64%69%61%20%26%26%20%77%69%6E%64%6F%77%2E%6D%61%74%63%68%4D%65%64%69%61%28%27%28%70%72%65%66%65%72%73%2D%63%6F%6C%6F%72%2D%73%63%68%65%6D%65%3A%20%64%61%72%6B%29%27%29%2E%6D%61%74%63%68%65%73%29%20%7B%0A%20%20%20%20%20%20%64%6F%63%75%6D%65%6E%74%2E%64%6F%63%75%6D%65%6E%74%45%6C%65%6D%65%6E%74%2E%73%65%74%41%74%74%72%69%62%75%74%65%28%27%64%61%74%61%2D%74%68%65%6D%65%27%2C%20%27%64%61%72%6B%27%29%3B%0A%20%20%20%20%20%20%74%68%65%6D%65%54%6F%67%67%6C%65%2E%63%68%65%63%6B%65%64%20%3D%20%74%72%75%65%3B%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20%2F%2F%20%41%64%64%20%65%76%65%6E%74%20%6C%69%73%74%65%6E%65%72%20%66%6F%72%20%74%68%65%6D%65%20%74%6F%67%67%6C%65%0A%20%20%20%20%74%68%65%6D%65%54%6F%67%67%6C%65%2E%61%64%64%45%76%65%6E%74%4C%69%73%74%65%6E%65%72%28%27%63%68%61%6E%67%65%27%2C%20%66%75%6E%63%74%69%6F%6E%28%29%20%7B%0A%20%20%20%20%20%20%69%66%20%28%74%68%69%73%2E%63%68%65%63%6B%65%64%29%20%7B%0A%20%20%20%20%20%20%20%20%64%6F%63%75%6D%65%6E%74%2E%64%6F%63%75%6D%65%6E%74%45%6C%65%6D%65%6E%74%2E%73%65%74%41%74%74%72%69%62%75%74%65%28%27%64%61%74%61%2D%74%68%65%6D%65%27%2C%20%27%64%61%72%6B%27%29%3B%0A%20%20%20%20%20%20%20%20%6C%6F%63%61%6C%53%74%6F%72%61%67%65%2E%73%65%74%49%74%65%6D%28%27%74%68%65%6D%65%27%2C%20%27%64%61%72%6B%27%29%3B%0A%20%20%20%20%20%20%7D%20%65%6C%73%65%20%7B%0A%20%20%20%20%20%20%20%20%64%6F%63%75%6D%65%6E%74%2E%64%6F%63%75%6D%65%6E%74%45%6C%65%6D%65%6E%74%2E%73%65%74%41%74%74%72%69%62%75%74%65%28%27%64%61%74%61%2D%74%68%65%6D%65%27%2C%20%27%6C%69%67%68%74%27%29%3B%0A%20%20%20%20%20%20%20%20%6C%6F%63%61%6C%53%74%6F%72%61%67%65%2E%73%65%74%49%74%65%6D%28%27%74%68%65%6D%65%27%2C%20%27%6C%69%67%68%74%27%29%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%29%3B%0A%20%20%20%20%0A%20%20%20%20%2F%2F%20%46%6F%6E%74%20%73%69%7A%65%20%73%6C%69%64%65%72%0A%20%20%20%20%63%6F%6E%73%74%20%66%6F%6E%74%53%69%7A%65%53%6C%69%64%65%72%20%3D%20%64%6F%63%75%6D%65%6E%74%2E%67%65%74%45%6C%65%6D%65%6E%74%42%79%49%64%28%27%66%6F%6E%74%53%69%7A%65%53%6C%69%64%65%72%27%29%3B%0A%20%20%20%20%63%6F%6E%73%74%20%66%6F%6E%74%53%69%7A%65%56%61%6C%75%65%20%3D%20%64%6F%63%75%6D%65%6E%74%2E%67%65%74%45%6C%65%6D%65%6E%74%42%79%49%64%28%27%66%6F%6E%74%53%69%7A%65%56%61%6C%75%65%27%29%3B%0A%20%20%20%20%0A%20%20%20%20%66%6F%6E%74%53%69%7A%65%53%6C%69%64%65%72%2E%61%64%64%45%76%65%6E%74%4C%69%73%74%65%6E%65%72%28%27%69%6E%70%75%74%27%2C%20%66%75%6E%63%74%69%6F%6E%28%29%20%7B%0A%20%20%20%20%20%20%66%6F%6E%74%53%69%7A%65%56%61%6C%75%65%2E%74%65%78%74%43%6F%6E%74%65%6E%74%20%3D%20%74%68%69%73%2E%76%61%6C%75%65%20%2B%20%27%70%78%27%3B%0A%20%20%20%20%20%20%69%66%20%28%64%6F%63%75%6D%65%6E%74%2E%67%65%74%45%6C%65%6D%65%6E%74%42%79%49%64%28%22%69%6E%70%75%74%54%65%78%74%22%29%2E%76%61%6C%75%65%2E%74%72%69%6D%28%29%20%21%3D%3D%20%22%22%29%20%7B%0A%20%20%20%20%20%20%20%20%67%65%6E%65%72%61%74%65%28%66%61%6C%73%65%29%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%29%3B%0A%20%20%20%20%0A%20%20%20%20%2F%2F%20%43%6F%6C%6F%72%20%70%61%6C%65%74%74%65%20%73%65%6C%65%63%74%69%6F%6E%0A%20%20%20%20%63%6F%6E%73%74%20%70%61%6C%65%74%74%65%4F%70%74%69%6F%6E%73%20%3D%20%64%6F%63%75%6D%65%6E%74%2E%71%75%65%72%79%53%65%6C%65%63%74%6F%72%41%6C%6C%28%27%2E%70%61%6C%65%74%74%65%2D%6F%70%74%69%6F%6E%27%29%3B%0A%20%20%20%20%0A%20%20%20%20%70%61%6C%65%74%74%65%4F%70%74%69%6F%6E%73%2E%66%6F%72%45%61%63%68%28%6F%70%74%69%6F%6E%20%3D%3E%20%7B%0A%20%20%20%20%20%20%6F%70%74%69%6F%6E%2E%61%64%64%45%76%65%6E%74%4C%69%73%74%65%6E%65%72%28%27%63%6C%69%63%6B%27%2C%20%66%75%6E%63%74%69%6F%6E%28%29%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20%52%65%6D%6F%76%65%20%61%63%74%69%76%65%20%63%6C%61%73%73%20%66%72%6F%6D%20%61%6C%6C%20%6F%70%74%69%6F%6E%73%0A%20%20%20%20%20%20%20%20%70%61%6C%65%74%74%65%4F%70%74%69%6F%6E%73%2E%66%6F%72%45%61%63%68%28%6F%70%74%20%3D%3E%20%6F%70%74%2E%63%6C%61%73%73%4C%69%73%74%2E%72%65%6D%6F%76%65%28%27%61%63%74%69%76%65%27%29%29%3B%0A%20%20%20%20%20%20%20%20%2F%2F%20%41%64%64%20%61%63%74%69%76%65%20%63%6C%61%73%73%20%74%6F%20%63%6C%69%63%6B%65%64%20%6F%70%74%69%6F%6E%0A%20%20%20%20%20%20%20%20%74%68%69%73%2E%63%6C%61%73%73%4C%69%73%74%2E%61%64%64%28%27%61%63%74%69%76%65%27%29%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2F%2F%20%55%70%64%61%74%65%20%74%68%65%20%63%75%72%72%65%6E%74%20%70%61%6C%65%74%74%65%0A%20%20%20%20%20%20%20%20%63%75%72%72%65%6E%74%50%61%6C%65%74%74%65%20%3D%20%74%68%69%73%2E%67%65%74%41%74%74%72%69%62%75%74%65%28%27%64%61%74%61%2D%70%61%6C%65%74%74%65%27%29%3B%0A%20%20%20%20%20%20%20%20%63%73%73%43%6F%6C%6F%72%73%20%3D%20%63%6F%6C%6F%72%50%61%6C%65%74%74%65%73%5B%63%75%72%72%65%6E%74%50%61%6C%65%74%74%65%5D%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2F%2F%20%52%65%67%65%6E%65%72%61%74%65%20%69%66%20%74%68%65%72%65%27%73%20%74%65%78%74%0A%20%20%20%20%20%20%20%20%69%66%20%28%64%6F%63%75%6D%65%6E%74%2E%67%65%74%45%6C%65%6D%65%6E%74%42%79%49%64%28%22%69%6E%70%75%74%54%65%78%74%22%29%2E%76%61%6C%75%65%2E%74%72%69%6D%28%29%20%21%3D%3D%20%22%22%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%67%65%6E%65%72%61%74%65%28%66%61%6C%73%65%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%7D%29%3B%0A%20%20%20%20%0A%20%20%20%20%2F%2F%20%46%6F%6E%74%20%73%65%6C%65%63%74%69%6F%6E%0A%20%20%20%20%63%6F%6E%73%74%20%66%6F%6E%74%4F%70%74%69%6F%6E%73%20%3D%20%64%6F%63%75%6D%65%6E%74%2E%71%75%65%72%79%53%65%6C%65%63%74%6F%72%41%6C%6C%28%27%2E%66%6F%6E%74%2D%6F%70%74%69%6F%6E%27%29%3B%0A%20%20%20%20%0A%20%20%20%20%66%6F%6E%74%4F%70%74%69%6F%6E%73%2E%66%6F%72%45%61%63%68%28%6F%70%74%69%6F%6E%20%3D%3E%20%7B%0A%20%20%20%20%20%20%6F%70%74%69%6F%6E%2E%61%64%64%45%76%65%6E%74%4C%69%73%74%65%6E%65%72%28%27%63%6C%69%63%6B%27%2C%20%66%75%6E%63%74%69%6F%6E%28%29%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20%52%65%6D%6F%76%65%20%61%63%74%69%76%65%20%63%6C%61%73%73%20%66%72%6F%6D%20%61%6C%6C%20%6F%70%74%69%6F%6E%73%0A%20%20%20%20%20%20%20%20%66%6F%6E%74%4F%70%74%69%6F%6E%73%2E%66%6F%72%45%61%63%68%28%6F%70%74%20%3D%3E%20%6F%70%74%2E%63%6C%61%73%73%4C%69%73%74%2E%72%65%6D%6F%76%65%28%27%61%63%74%69%76%65%27%29%29%3B%0A%20%20%20%20%20%20%20%20%2F%2F%20%41%64%64%20%61%63%74%69%76%65%20%63%6C%61%73%73%20%74%6F%20%63%6C%69%63%6B%65%64%20%6F%70%74%69%6F%6E%0A%20%20%20%20%20%20%20%20%74%68%69%73%2E%63%6C%61%73%73%4C%69%73%74%2E%61%64%64%28%27%61%63%74%69%76%65%27%29%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2F%2F%20%55%70%64%61%74%65%20%74%68%65%20%63%75%72%72%65%6E%74%20%66%6F%6E%74%0A%20%20%20%20%20%20%20%20%63%75%72%72%65%6E%74%46%6F%6E%74%20%3D%20%74%68%69%73%2E%67%65%74%41%74%74%72%69%62%75%74%65%28%27%64%61%74%61%2D%66%6F%6E%74%27%29%3B%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%2F%2F%20%52%65%67%65%6E%65%72%61%74%65%20%69%66%20%74%68%65%72%65%27%73%20%74%65%78%74%0A%20%20%20%20%20%20%20%20%69%66%20%28%64%6F%63%75%6D%65%6E%74%2E%67%65%74%45%6C%65%6D%65%6E%74%42%79%49%64%28%22%69%6E%70%75%74%54%65%78%74%22%29%2E%76%61%6C%75%65%2E%74%72%69%6D%28%29%20%21%3D%3D%20%22%22%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%67%65%6E%65%72%61%74%65%28%66%61%6C%73%65%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%7D%29%3B%0A%20%20%3C%2F%73%63%72%69%70%74%3E%20'))</script>
+    function generate(isRandom) { 
+      const input = DOM.inputText.value; 
+      const fontStyle = currentFontStyle;
+      const fontSize = DOM.fontSizeSlider.value;
+      
+      if (!input || input.trim() === '') return;
+      
+      // Show loading if text is long
+      const loadingOverlay = DOM.loadingOverlay;
+      if (input.length > 500) {
+        loadingOverlay.style.visibility = "visible";
+        loadingOverlay.style.opacity = "1";
+        
+        // Menggunakan requestAnimationFrame untuk performa lebih baik
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            generateText(input, fontStyle, fontSize, isRandom);
+            loadingOverlay.style.visibility = "hidden";
+            loadingOverlay.style.opacity = "0";
+          }, 10);
+        });
+      } else {
+        generateText(input, fontStyle, fontSize, isRandom);
+      }
+    }
+    
+    function generateText(input, fontStyle, fontSize, isRandom) {
+      if (useGroupedMode) {
+        generateGroupedText(input, fontStyle, fontSize, isRandom);
+      } else {
+        generatePerCharacterText(input, fontStyle, fontSize, isRandom);
+      }
+    }
+    
+    // Fungsi untuk mode Dikelompok (lebih ringkas, tapi mungkin ada masalah kompatibilitas)
+    function generateGroupedText(input, fontStyle, fontSize, isRandom) {
+      // Kembali ke pendekatan inline style tapi dengan pengelompokan yang efisien
+      let outputParts = [];
+      
+      // Check current theme
+      const isLightTheme = document.documentElement.getAttribute('data-theme') === 'light';
+      
+      // Base style yang akan digunakan untuk semua karakter
+      const baseStyle = `text-shadow: 0px 0px 1px ${isLightTheme ? 'rgba(0,0,0,0.3)' : 'rgba(0,0,0,0.2)'}; font-size:${fontSize}px; font-family:${currentFont};`;
+      
+      // Tambahan style berdasarkan fontStyle
+      let additionalStyle = '';
+      if (fontStyle === "bold") {
+        additionalStyle += " font-weight: bold;";
+      } else if (fontStyle === "italic") {
+        additionalStyle += " font-style: italic;";
+      } else if (fontStyle === "underline") {
+        additionalStyle += " text-decoration: underline;";
+      }
+      
+      // Buat container utama untuk mempertahankan style font
+      outputParts.push(`<div style="${baseStyle}${additionalStyle}">`);
+      
+      // Proses karakter secara visual dengan Array.from
+      const visualChars = Array.from(input);
+      const len = visualChars.length;
+      const colorLen = cssColors.length;
+      
+      // Untuk mode random, pre-generate warna untuk setiap karakter
+      let colorIndices = [];
+      if (isRandom) {
+        for (let i = 0; i < len; i++) {
+          colorIndices.push(Math.floor(Math.random() * colorLen));
+        }
+      }
+      
+      // Kumpulkan karakter dengan warna yang sama
+      let i = 0;
+      while (i < len) {
+        const char = visualChars[i];
+        
+        // Handle newlines
+        if (char === "\n") {
+          outputParts.push("<br>\n");
+          i++;
+          continue;
+        }
+        
+        // Handle spaces with improved color for light mode
+        if (char === " ") {
+          let spaceCount = 1;
+          while (i + spaceCount < len && visualChars[i + spaceCount] === " ") {
+            spaceCount++;
+          }
+          outputParts.push(`<span style="color:${isLightTheme ? '#777777' : '#bbbbbb'};">${"&nbsp;".repeat(spaceCount)}</span>`);
+          i += spaceCount;
+          continue;
+        }
+        
+        // Untuk karakter normal, kelompokkan dengan warna sama
+        let colorIndex;
+        if (isRandom) {
+          colorIndex = colorIndices[i];
+        } else {
+          colorIndex = i % colorLen;
+        }
+        
+        const currentColor = cssColors[colorIndex];
+        
+        // Kumpulkan karakter dengan warna sama
+        let charGroup = char;
+        let nextIndex = i + 1;
+        
+        while (nextIndex < len) {
+          const nextChar = visualChars[nextIndex];
+          if (nextChar === " " || nextChar === "\n") break;
+          
+          let nextColorIndex;
+          if (isRandom) {
+            nextColorIndex = colorIndices[nextIndex];
+          } else {
+            nextColorIndex = nextIndex % colorLen;
+          }
+          
+          if (nextColorIndex !== colorIndex) break;
+          
+          charGroup += nextChar;
+          nextIndex++;
+        }
+        
+        // Add more distinct shadow for light theme
+        const extraStyle = isLightTheme ? 'text-shadow: 0 0 2px rgba(0,0,0,0.2);' : '';
+        
+        // Gunakan fungsi escapeHTML untuk menangani karakter khusus
+        const safeText = escapeHTML(charGroup);
+        
+        // Buat inline style dan tambahkan span
+        const fullStyle = `color:${currentColor}; ${extraStyle}`;
+        outputParts.push(`<span style="${fullStyle}">${safeText}</span>`);
+        
+        i = nextIndex;
+      }
+      
+      // Tutup container utama
+      outputParts.push('</div>');
+      
+      // Tambahkan disclaimer peringatan standar dengan warna khusus jika diaktifkan
+      if (showDisclaimer) {
+        outputParts.push("<br><br>");
+        outputParts.push(`<span style="color:#ff0000">⚠</span><span style="color:#ffff00"> Gunakan </span><span style="color:#00ff00">dengan </span><span style="color:#00ffff">bijak. </span><span style="color:#0000ff">Kami </span><span style="color:#ff00ff">tidak </span><span style="color:#ff0000">bertanggung </span><span style="color:#ffff00">jawab </span><span style="color:#00ff00">atas </span><span style="color:#00ffff">penyalahgunaan.</span>`);
+      }
+      
+      // Gabungkan output dan masukkan ke DOM
+      DOM.output.innerHTML = outputParts.join('');
+      
+      // Set data attribute untuk menyimpan teks mentah
+      DOM.output.setAttribute('data-plain-text', input);
+    }
+    
+    // Fungsi untuk menangani karakter khusus dalam HTML tanpa mengubah emoji
+    function escapeHTML(text) {
+      // Jangan melakukan escape pada emoji dan karakter khusus Unicode
+      // Hanya escape karakter HTML berbahaya
+      const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+      };
+      return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+    }
+    
+    // Fungsi untuk mode per karakter (kurang ringkas, tapi lebih kompatibel)
+    function generatePerCharacterText(input, fontStyle, fontSize, isRandom) {
+      let outputParts = [];
+      const len = input.length;
+      const colorLen = cssColors.length;
+      
+      // Check current theme
+      const isLightTheme = document.documentElement.getAttribute('data-theme') === 'light';
+      
+      // Buat style dasar untuk container utama
+      let containerStyle = `text-shadow:0 0 1px ${isLightTheme ? 'rgba(0,0,0,0.3)' : 'rgba(0,0,0,0.2)'};font-size:${fontSize}px;font-family:${currentFont};`;
+      
+      // Tambahan style berdasarkan fontStyle
+      if (fontStyle === "bold") {
+        containerStyle += "font-weight:bold;";
+      } else if (fontStyle === "italic") {
+        containerStyle += "font-style:italic;";
+      } else if (fontStyle === "underline") {
+        containerStyle += "text-decoration:underline;";
+      }
+      
+      // Mulai div container untuk menampung semua span dengan style sekali
+      outputParts.push(`<div style="${containerStyle}">`);
+      
+      // Proses karakter-karakter secara visual (bukan per kode Unicode)
+      // Array.from memungkinkan kita mengiterasi berdasarkan karakter visual, bukan kode point
+      const visualChars = Array.from(input);
+      
+      for (let i = 0; i < visualChars.length; i++) {
+        const char = visualChars[i];
+        
+        // Handle newlines
+        if (char === "\n") {
+          outputParts.push("<br>");
+          continue;
+        }
+        
+        // Handle spaces
+        if (char === " ") {
+          outputParts.push(`<span style="color:${isLightTheme ? '#777777' : '#bbbbbb'}">&nbsp;</span>`);
+          continue;
+        }
+        
+        // Untuk karakter normal
+        const colorIndex = isRandom ? Math.floor(Math.random() * colorLen) : i % colorLen;
+        const currentColor = cssColors[colorIndex];
+        
+        // Add more distinct shadow for light theme
+        const extraStyle = isLightTheme ? 'text-shadow:0 0 2px rgba(0,0,0,0.2);' : '';
+        
+        // Gunakan fungsi escapeHTML untuk menangani karakter khusus
+        const safeChar = escapeHTML(char);
+        
+        // Hanya tetapkan warna saja karena properti lain sudah di container
+        outputParts.push(`<span style="color:${currentColor};${extraStyle}">${safeChar}</span>`);
+      }
+      
+      // Tambahkan disclaimer peringatan standar dengan warna khusus jika diaktifkan
+      if (showDisclaimer) {
+        outputParts.push("<br><br>");
+        outputParts.push(`<span style="color:#ff0000">⚠</span><span style="color:#ffff00"> Gunakan </span><span style="color:#00ff00">dengan </span><span style="color:#00ffff">bijak. </span><span style="color:#0000ff">Kami </span><span style="color:#ff00ff">tidak </span><span style="color:#ff0000">bertanggung </span><span style="color:#ffff00">jawab </span><span style="color:#00ff00">atas </span><span style="color:#00ffff">penyalahgunaan.</span>`);
+      }
+      
+      // Tutup div container
+      outputParts.push('</div>');
+      
+      // Gabungkan output dan masukkan ke DOM
+      DOM.output.innerHTML = outputParts.join('');
+      
+      // Set data attribute untuk menyimpan teks mentah
+      DOM.output.setAttribute('data-plain-text', input);
+    }
+ 
+    function copyToClipboard() { 
+      // Metode yang dioptimalkan untuk menyalin konten
+      const htmlContent = DOM.output.innerHTML;
+      
+      // Cari cara terbaik untuk mendapatkan HTML
+      const fullContent = htmlContent || DOM.output.outerHTML;
+      
+      const temp = document.createElement("textarea"); 
+      temp.value = fullContent;
+      document.body.appendChild(temp); 
+      temp.select(); 
+      document.execCommand("copy"); 
+      document.body.removeChild(temp); 
+      
+      showNotification();
+    }
+    
+    // Fungsi untuk menyimpan HTML dengan dukungan emoji yang lebih baik
+    function saveAsHTML() {
+      // Cek apakah ada konten untuk disimpan
+      if (!DOM.output || DOM.output.innerHTML.trim() === '') {
+        alert('Tidak ada konten untuk disimpan. Silakan generate teks terlebih dahulu.');
+        return;
+      }
+      
+      // Ambil teks yang diinput pengguna sebagai nama file default
+      let filename = DOM.inputText.value.substring(0, 20).trim();
+      // Ganti spasi dengan underscore dan buang karakter non-alfanumerik
+      filename = filename.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_]/g, '');
+      // Jika kosong, gunakan nama default
+      if (!filename) {
+        filename = 'rainbow_text';
+      }
+      
+      // Dapatkan font yang sedang digunakan
+      const currentFontCSS = document.querySelector('.md-chip.active')?.getAttribute('data-font') || "Arial, sans-serif";
+      
+      // Dapatkan semua link font Google yang digunakan
+      const fontLinks = Array.from(document.querySelectorAll('link[href*="fonts.googleapis.com"]'))
+        .map(link => link.outerHTML)
+        .join('\n  ');
+      
+      // Buat HTML dasar yang lebih sederhana tetapi dengan dukungan emoji
+      const html = [
+        '<!DOCTYPE html>',
+        '<html lang="id">',
+        '<head>',
+        '  <meta charset="UTF-8">',
+        '  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">',
+        '  <meta name="viewport" content="width=device-width, initial-scale=1.0">',
+        `  <title>${filename}</title>`,
+        `  ${fontLinks}`,
+        '  <style>',
+        '    @font-face {',
+        '      font-family: "Emoji";',
+        '      src: local("Noto Color Emoji"), local("Segoe UI Emoji"), local("Apple Color Emoji");',
+        '    }',
+        '    body {',
+        `      background-color: ${document.documentElement.getAttribute('data-theme') === 'dark' ? '#1a1a1a' : '#f8fafa'};`,
+        '      font-family: "Emoji", Arial, sans-serif;',
+        '      display: flex;',
+        '      justify-content: center;',
+        '      align-items: center;',
+        '      min-height: 100vh;',
+        '      margin: 0;',
+        '      padding: 20px;',
+        '    }',
+        '    .container {',
+        '      max-width: 800px;',
+        '      padding: 20px;',
+        `      background-color: ${document.documentElement.getAttribute('data-theme') === 'dark' ? '#1e2323' : '#ffffff'};`,
+        '      border-radius: 8px;',
+        '      box-shadow: 0 2px 10px rgba(0,0,0,0.1);',
+        '      text-align: center;',
+        '    }',
+        '    .output {',
+        '      padding: 20px;',
+        '      line-height: 1.5;',
+        '      border-radius: 4px;',
+        '      margin-top: 20px;',
+        '      word-wrap: break-word;',
+        '    }',
+        '    .footer {',
+        '      margin-top: 30px;',
+        '      font-size: 12px;',
+        '      color: #888;',
+        '    }',
+        '    .current-font {',
+        `      font-family: ${currentFontCSS}, "Emoji";`,
+        '    }',
+        '    /* Gaya untuk memastikan emoji ditampilkan dengan benar */',
+        '    span, div, p {',
+        '      unicode-bidi: isolate;',
+        '    }',
+        '  </style>',
+        '</head>',
+        '<body>',
+        '  <div class="container">',
+        '    <div class="output current-font">',
+        `${DOM.output.innerHTML}`,
+        '    </div>',
+        '    <div class="footer">',
+        '      Created with Rainbow Text Generator',
+        '    </div>',
+        '  </div>',
+        '</body>',
+        '</html>'
+      ].join('\n');
+      
+      // Buat elemen <a> untuk mengunduh
+      const element = document.createElement('a');
+      
+      try {
+        // Gunakan TextEncoder untuk memastikan UTF-8 encoding dilakukan dengan benar
+        const encoder = new TextEncoder();
+        
+        // Tambahkan BOM (Byte Order Mark) untuk UTF-8
+        const BOM = new Uint8Array([0xEF, 0xBB, 0xBF]);
+        const contentBytes = encoder.encode(html);
+        
+        // Gabungkan BOM dengan konten HTML
+        const contentWithBOM = new Uint8Array(BOM.length + contentBytes.length);
+        contentWithBOM.set(BOM);
+        contentWithBOM.set(contentBytes, BOM.length);
+        
+        // Buat Blob dengan encoding UTF-8 yang tepat
+        const blob = new Blob([contentWithBOM], { 
+          type: 'text/html;charset=utf-8'
+        });
+        
+        // Buat URL dan atur atribut unduhan
+        const url = URL.createObjectURL(blob);
+        element.href = url;
+        element.download = `${filename}.html`;
+        element.style.display = 'none';
+        
+        // Tambahkan ke DOM, klik, dan bersihkan
+        document.body.appendChild(element);
+        element.click();
+        
+        // Bersihkan setelah beberapa saat
+        setTimeout(() => {
+          document.body.removeChild(element);
+          URL.revokeObjectURL(url);
+          showSaveNotification();
+        }, 100);
+      } catch (error) {
+        console.error('Error saving HTML:', error);
+        
+        // Fallback jika TextEncoder tidak didukung
+        const blob = new Blob([html], { 
+          type: 'text/html;charset=utf-8'
+        });
+        
+        const url = URL.createObjectURL(blob);
+        element.href = url;
+        element.download = `${filename}.html`;
+        element.style.display = 'none';
+        
+        document.body.appendChild(element);
+        element.click();
+        
+        setTimeout(() => {
+          document.body.removeChild(element);
+          URL.revokeObjectURL(url);
+          showSaveNotification();
+        }, 100);
+      }
+    }
+    
+    function showNotification() {
+      const notification = document.createElement('div');
+      notification.style.position = 'fixed';
+      notification.style.bottom = '20px';
+      notification.style.left = '50%';
+      notification.style.transform = 'translateX(-50%)';
+      
+      // Check current theme and use appropriate colors
+      const isDarkTheme = document.documentElement.getAttribute('data-theme') === 'dark';
+      notification.style.backgroundColor = isDarkTheme ? '#00e2e2' : '#00a0a0';
+      notification.style.color = isDarkTheme ? '#003737' : '#ffffff';
+      
+      notification.style.padding = '12px 24px';
+      notification.style.borderRadius = '4px';
+      notification.style.boxShadow = isDarkTheme ? 
+        '0 2px 8px rgba(0,0,0,0.3)' : 
+        '0 2px 8px rgba(0,0,0,0.15)';
+      notification.style.zIndex = '1000';
+      notification.textContent = 'Teks berhasil disalin ke clipboard!';
+      
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        notification.style.opacity = '0';
+        notification.style.transition = 'opacity 0.5s ease';
+        setTimeout(() => {
+          document.body.removeChild(notification);
+        }, 500);
+      }, 2000);
+    }
+    
+    function showSaveNotification() {
+      const notification = document.createElement('div');
+      notification.style.position = 'fixed';
+      notification.style.bottom = '20px';
+      notification.style.left = '50%';
+      notification.style.transform = 'translateX(-50%)';
+      
+      // Check current theme and use appropriate colors
+      const isDarkTheme = document.documentElement.getAttribute('data-theme') === 'dark';
+      notification.style.backgroundColor = isDarkTheme ? '#00b347' : '#00a040';
+      notification.style.color = '#ffffff';
+      
+      notification.style.padding = '12px 24px';
+      notification.style.borderRadius = '4px';
+      notification.style.boxShadow = isDarkTheme ? 
+        '0 2px 8px rgba(0,0,0,0.3)' : 
+        '0 2px 8px rgba(0,0,0,0.15)';
+      notification.style.zIndex = '1000';
+      notification.textContent = 'File HTML berhasil disimpan!';
+      
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        notification.style.opacity = '0';
+        notification.style.transition = 'opacity 0.5s ease';
+        setTimeout(() => {
+          document.body.removeChild(notification);
+        }, 500);
+      }, 2000);
+    }
+    
+    // Inisialisasi aplikasi saat dokumen siap
+    document.addEventListener('DOMContentLoaded', () => {
+      // Theme toggle functionality
+      initThemeToggle();
+      
+      // Initialize font size slider
+      initFontSizeSlider();
+      
+      // Initialize color palette selection
+      initColorPalettes();
+      
+      // Initialize font selection
+      initFontSelection();
+      
+      // Initialize settings menu
+      initSettingsMenu();
+      
+      // Initialize custom select box
+      initFontStyleSelect();
+      
+      // Initialize view mode switcher
+      initViewModeSwitcher();
+      
+      // Apply ripple effect to all buttons
+      const buttons = document.querySelectorAll('.md-button');
+      buttons.forEach(button => {
+        button.addEventListener('click', createRipple);
+      });
+      
+      // Request clipboard permissions on first user interaction
+      document.querySelector('.md-button.tertiary').addEventListener('click', function() {
+        // Request clipboard permission jika belum pernah dilakukan
+        if (navigator.clipboard && !navigator.clipboard.hasRequestedPermission) {
+          try {
+            navigator.permissions.query({name: 'clipboard-write'})
+              .then(permissionStatus => {
+                // Mark that we've requested permission
+                navigator.clipboard.hasRequestedPermission = true;
+                console.log('Clipboard permission status:', permissionStatus.state);
+              })
+              .catch(error => {
+                // This will fail silently on browsers that don't support permission API
+                console.log('Clipboard permission API not supported');
+              });
+          } catch (e) {
+            // Browser doesn't support permission API, ignore
+          }
+        }
+      });
+      
+      // Autogenerate on text input (dengan debounce)
+      DOM.inputText.addEventListener('input', debounce(() => {
+        if (DOM.inputText.value.trim() !== '') {
+          generate(false);
+        }
+      }, 300));
+    });
+    
+    function initThemeToggle() {
+      // Check for saved theme preference or use preferred color scheme
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        DOM.themeToggle.checked = true;
+      } else if (savedTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        DOM.themeToggle.checked = false;
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        DOM.themeToggle.checked = true;
+      }
+      
+      // Add event listener for theme toggle
+      DOM.themeToggle.addEventListener('change', function() {
+        if (this.checked) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+          localStorage.setItem('theme', 'light');
+        }
+      });
+    }
+    
+    function initFontSizeSlider() {
+      const sliderTicks = DOM.sliderTicks;
+      
+      // Create tick marks for the slider
+      if (sliderTicks) {
+        // Clear any existing ticks
+        sliderTicks.innerHTML = '';
+        
+        // Create ticks for a 10-50px range with 2px steps
+        // We'll create major ticks every 10px and minor ticks every 2px
+        const min = 10;
+        const max = 50;
+        const step = 2;
+        const totalSteps = (max - min) / step;
+        
+        const fragment = document.createDocumentFragment();
+        
+        // Create tick marks with Document Fragment for performance
+        for (let i = 0; i <= totalSteps; i++) {
+          const tick = document.createElement('div');
+          const tickValue = min + (i * step);
+          tick.className = tickValue % 10 === 0 ? 'tick major' : 'tick';
+          tick.style.left = `${(i / totalSteps) * 100}%`;
+          fragment.appendChild(tick);
+        }
+        
+        sliderTicks.appendChild(fragment);
+      }
+      
+      // Update the value display and popup
+      DOM.fontSizeSlider.addEventListener('input', function() {
+        const value = this.value + 'px';
+        DOM.fontSizeValue.textContent = value;
+        
+        if (DOM.sliderValuePopup) {
+          DOM.sliderValuePopup.textContent = value;
+          DOM.sliderValuePopup.style.left = `${((this.value - this.min) / (this.max - this.min)) * 100}%`;
+        }
+        
+        if (DOM.inputText.value.trim() !== "") {
+          generate(false);
+        }
+      });
+      
+      // Show popup on slider hover/focus
+      DOM.fontSizeSlider.addEventListener('mouseover', function() {
+        if (DOM.sliderValuePopup) {
+          DOM.sliderValuePopup.style.left = `${((this.value - this.min) / (this.max - this.min)) * 100}%`;
+          DOM.sliderValuePopup.style.opacity = '1';
+        }
+      });
+      
+      DOM.fontSizeSlider.addEventListener('mouseout', function() {
+        if (DOM.sliderValuePopup) {
+          DOM.sliderValuePopup.style.opacity = '0';
+        }
+      });
+    }
+    
+    function initColorPalettes() {
+      const paletteOptions = document.querySelectorAll('.palette-option');
+      
+      paletteOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          // Remove active class from all options
+          paletteOptions.forEach(opt => opt.classList.remove('active'));
+          // Add active class to clicked option
+          this.classList.add('active');
+          
+          // Update the current palette
+          currentPalette = this.getAttribute('data-palette');
+          cssColors = colorPalettes[currentPalette];
+          
+          // Regenerate if there's text
+          if (DOM.inputText.value.trim() !== "") {
+            generate(false);
+          }
+        });
+      });
+    }
+    
+    function initFontSelection() {
+      const fontOptions = document.querySelectorAll('.md-chip');
+      
+      fontOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          // Remove active class from all options
+          fontOptions.forEach(opt => opt.classList.remove('active'));
+          // Add active class to clicked option
+          this.classList.add('active');
+          
+          // Update the current font
+          currentFont = this.getAttribute('data-font');
+          
+          // Regenerate if there's text
+          if (DOM.inputText.value.trim() !== "") {
+            generate(false);
+          }
+        });
+      });
+    }
+    
+    function initSettingsMenu() {
+      if (DOM.settingsBtn && DOM.settingsMenu) {
+        DOM.settingsBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          DOM.settingsMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+          if (!DOM.settingsBtn.contains(event.target) && !DOM.settingsMenu.contains(event.target)) {
+            DOM.settingsMenu.classList.remove('active');
+          }
+        });
+        
+        // Prevent menu close when clicking inside
+        DOM.settingsMenu.addEventListener('click', function(e) {
+          e.stopPropagation();
+        });
+      }
+    }
+    
+    function initFontStyleSelect() {
+      const selectContainer = document.getElementById('fontStyleSelectContainer');
+      const selectHeader = selectContainer.querySelector('.md-select-header');
+      const selectOptions = selectContainer.querySelector('.md-select-options');
+      const optionsList = selectContainer.querySelectorAll('.md-select-option');
+      const currentOptionText = document.getElementById('currentFontStyle');
+      
+      selectHeader.addEventListener('click', function(e) {
+        e.stopPropagation();
+        selectContainer.classList.toggle('active');
+      });
+      
+      // Close dropdown when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!selectContainer.contains(event.target)) {
+          selectContainer.classList.remove('active');
+        }
+      });
+      
+      // Option selection
+      optionsList.forEach(option => {
+        option.addEventListener('click', function() {
+          const value = this.getAttribute('data-value');
+          currentOptionText.textContent = this.textContent;
+          currentFontStyle = value;
+          selectContainer.classList.remove('active');
+          
+          // Update text if there's content
+          if (DOM.inputText.value.trim() !== '') {
+            generate(false);
+          }
+        });
+      });
+    }
+    
+    function initViewModeSwitcher() {
+      const viewSwitchOptions = document.querySelectorAll('.view-switch-option');
+      const html = document.documentElement;
+      
+      // Initialize based on saved preference or default to desktop
+      const savedViewMode = localStorage.getItem('viewMode') || 'desktop';
+      html.setAttribute('data-view-mode', savedViewMode);
+      DOM.viewModeToggle.checked = savedViewMode === 'mobile';
+      
+      // Toggle view mode when switch is clicked
+      DOM.viewModeToggle.addEventListener('change', function() {
+        const newMode = this.checked ? 'mobile' : 'desktop';
+        html.setAttribute('data-view-mode', newMode);
+        localStorage.setItem('viewMode', newMode);
+        
+        // Update active state for view switch options
+        viewSwitchOptions.forEach(option => {
+          const optionMode = option.getAttribute('data-mode');
+          if (optionMode === newMode) {
+            option.classList.add('active');
+          } else {
+            option.classList.remove('active');
+          }
+        });
+      });
+      
+      // Set initial active state for view switch options
+      viewSwitchOptions.forEach(option => {
+        const optionMode = option.getAttribute('data-mode');
+        if (optionMode === savedViewMode) {
+          option.classList.add('active');
+        } else {
+          option.classList.remove('active');
+        }
+      });
+      
+      // Initialize render mode toggle
+      const renderModeToggle = document.getElementById('renderModeToggle');
+      const renderSwitchOptions = document.querySelectorAll('.view-switch-option[data-mode="grouped"], .view-switch-option[data-mode="character"]');
+      
+      // Initialize based on saved preference or default to character
+      const savedRenderMode = localStorage.getItem('renderMode') || 'character';
+      useGroupedMode = savedRenderMode === 'grouped';
+      renderModeToggle.checked = savedRenderMode === 'character';
+      
+      // Toggle render mode when switch is clicked
+      renderModeToggle.addEventListener('change', function() {
+        const newMode = this.checked ? 'character' : 'grouped';
+        useGroupedMode = newMode === 'grouped';
+        localStorage.setItem('renderMode', newMode);
+        
+        // Regenerate output dengan mode baru jika ada teks
+        if (DOM.inputText.value.trim() !== '') {
+          generate(false);
+        }
+        
+        // Update active state for render switch options
+        renderSwitchOptions.forEach(option => {
+          const optionMode = option.getAttribute('data-mode');
+          if (optionMode === newMode) {
+            option.classList.add('active');
+          } else {
+            option.classList.remove('active');
+          }
+        });
+      });
+      
+      // Set initial active state for render switch options
+      renderSwitchOptions.forEach(option => {
+        const optionMode = option.getAttribute('data-mode');
+        if (optionMode === savedRenderMode) {
+          option.classList.add('active');
+        } else {
+          option.classList.remove('active');
+        }
+      });
+
+      // Initialize disclaimer toggle
+      const disclaimerToggle = document.getElementById('disclaimerToggle');
+      const disclaimerSwitchOptions = document.querySelectorAll('.view-switch-option[data-mode="on"], .view-switch-option[data-mode="off"]');
+      
+      // Initialize based on saved preference or default to on
+      const savedDisclaimerMode = localStorage.getItem('disclaimerMode') || 'on';
+      showDisclaimer = savedDisclaimerMode === 'on';
+      disclaimerToggle.checked = savedDisclaimerMode === 'on';
+      
+      // Toggle disclaimer when switch is clicked
+      disclaimerToggle.addEventListener('change', function() {
+        const newMode = this.checked ? 'on' : 'off';
+        showDisclaimer = newMode === 'on';
+        localStorage.setItem('disclaimerMode', newMode);
+        
+        // Regenerate output dengan mode baru jika ada teks
+        if (DOM.inputText.value.trim() !== '') {
+          generate(false);
+        }
+        
+        // Update active state for disclaimer switch options
+        disclaimerSwitchOptions.forEach(option => {
+          const optionMode = option.getAttribute('data-mode');
+          if (optionMode === newMode) {
+            option.classList.add('active');
+          } else {
+            option.classList.remove('active');
+          }
+        });
+      });
+      
+      // Set initial active state for disclaimer switch options
+      disclaimerSwitchOptions.forEach(option => {
+        const optionMode = option.getAttribute('data-mode');
+        if (optionMode === savedDisclaimerMode) {
+          option.classList.add('active');
+        } else {
+          option.classList.remove('active');
+        }
+      });
+    }
+    
+    // Expose public functions for HTML onclick
+    window.generate = generate;
+    window.copyToClipboard = copyToClipboard;
+    window.saveAsHTML = saveAsHTML;
+
+    // Add function for ripple effect on buttons
+    function createRipple(event) {
+      const button = event.currentTarget;
+      
+      const circle = document.createElement('span');
+      const diameter = Math.max(button.clientWidth, button.clientHeight);
+      const radius = diameter / 2;
+      
+      // Get button's position relative to viewport
+      const rect = button.getBoundingClientRect();
+      
+      circle.style.width = circle.style.height = `${diameter}px`;
+      circle.style.left = `${event.clientX - rect.left - radius}px`;
+      circle.style.top = `${event.clientY - rect.top - radius}px`;
+      circle.classList.add('ripple');
+      
+      // Remove existing ripples
+      const ripple = button.querySelector('.ripple');
+      if (ripple) {
+        ripple.remove();
+      }
+      
+      button.appendChild(circle);
+    }
+
+    // Add new color palettes
+    document.addEventListener('DOMContentLoaded', function() {
+      // Define new palettes
+      const newPalettes = {
+        "forest-dream": [
+          "#004d00", "#006400", "#007800", "#008c00", "#00a000", "#00b400", 
+          "#00c800", "#00dc00", "#00f000", "#32cd32", "#228b22", "#2e8b57"
+        ],
+        "sakura-bloom": [
+          "#ffd1dc", "#ffb7c5", "#ff9db2", "#ff839f", "#ff698c", "#ff4f79", 
+          "#f4c2c2", "#ffb6c1", "#ffa6c9", "#d8b2d1", "#c9a9c8", "#9966cc"
+        ],
+        "glacier": [
+          "#e0ffff", "#b0e0e6", "#87ceeb", "#b0c4de", "#6495ed", "#4682b4", 
+          "#5f9ea0", "#008b8b", "#00ced1", "#20b2aa", "#40e0d0", "#afeeee"
+        ],
+        "rainbow-shine": [
+          "#ff0000", "#ff4500", "#ffa500", "#ffd700", "#ffff00", "#adff2f", 
+          "#00ff00", "#00fa9a", "#00ffff", "#1e90ff", "#0000ff", "#8a2be2", 
+          "#ff00ff", "#ff69b4"
+        ],
+        "pastel-candy": [
+          "#ffb6c1", "#ffcccc", "#ffc8dd", "#ffcba4", "#ffffcc", "#e6ffcc", 
+          "#ccffcc", "#ccffe6", "#ccffff", "#cce6ff", "#ccccff", "#e6ccff"
+        ],
+        "aurora-borealis": [
+          "#98ff98", "#00ff7f", "#00fa9a", "#00ffff", "#00bfff", "#1e90ff", 
+          "#9370db", "#8a2be2", "#ee82ee", "#da70d6", "#ff00ff", "#c71585"
+        ],
+        "galaxy": [
+          "#000033", "#000066", "#0000cc", "#3333ff", "#6633ff", "#9933ff", 
+          "#cc33ff", "#ff33ff", "#ff33cc", "#ff3399", "#ff3366", "#9966cc"
+        ],
+        "lava-flow": [
+          "#8b0000", "#b22222", "#cd5c5c", "#dc143c", "#ff0000", "#ff4500", 
+          "#ff6347", "#ff7f50", "#ff8c00", "#ffa500", "#ffd700", "#ffff00"
+        ]
+      };
+      
+      // Add the new palettes to the existing colorPalettes object
+      Object.keys(newPalettes).forEach(key => {
+        colorPalettes[key] = newPalettes[key];
+      });
+
+      // Check if the palette elements already exist
+      const colorPaletteContainer = document.querySelector('.color-palette');
+      const existingPalettes = colorPaletteContainer.querySelectorAll('.palette-option');
+      const existingPaletteNames = Array.from(existingPalettes).map(el => el.getAttribute('data-palette'));
+      
+      // For each new palette, if not already in the DOM, add it
+      Object.keys(newPalettes).forEach(paletteName => {
+        if (!existingPaletteNames.includes(paletteName)) {
+          // Create gradient background based on palette name
+          let gradientColors;
+          switch(paletteName) {
+            case 'forest-dream':
+              gradientColors = 'linear-gradient(90deg, #004d00, #008c00, #00c800, #32cd32)';
+              break;
+            case 'sakura-bloom':
+              gradientColors = 'linear-gradient(90deg, #ffd1dc, #ffb7c5, #ff839f, #d8b2d1)';
+              break;
+            case 'glacier':
+              gradientColors = 'linear-gradient(90deg, #e0ffff, #87ceeb, #6495ed, #008b8b)';
+              break;
+            case 'rainbow-shine':
+              gradientColors = 'linear-gradient(90deg, #ff0000, #ffd700, #00ff00, #00ffff, #0000ff, #ff00ff)';
+              break;
+            case 'pastel-candy':
+              gradientColors = 'linear-gradient(90deg, #ffb6c1, #ffffcc, #ccffcc, #ccccff)';
+              break;
+            case 'aurora-borealis':
+              gradientColors = 'linear-gradient(90deg, #98ff98, #00ffff, #8a2be2, #ff00ff)';
+              break;
+            case 'galaxy':
+              gradientColors = 'linear-gradient(90deg, #000033, #0000cc, #6633ff, #ff33ff)';
+              break;
+            case 'lava-flow':
+              gradientColors = 'linear-gradient(90deg, #8b0000, #ff0000, #ff8c00, #ffd700)';
+              break;
+            default:
+              gradientColors = 'linear-gradient(90deg, #000, #fff)';
+          }
+          
+          // Format the title (capitalize and replace hyphens with spaces)
+          const title = paletteName
+            .split('-')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+          
+          // Create the new palette option element
+          const paletteOption = document.createElement('div');
+          paletteOption.className = `palette-option ${paletteName}`;
+          paletteOption.setAttribute('data-palette', paletteName);
+          paletteOption.setAttribute('title', title);
+          paletteOption.style.background = gradientColors;
+          
+          // Add click event listener
+          paletteOption.addEventListener('click', function() {
+            // Remove active class from all options
+            document.querySelectorAll('.palette-option').forEach(opt => opt.classList.remove('active'));
+            // Add active class to clicked option
+            this.classList.add('active');
+            
+            // Update the current palette
+            currentPalette = this.getAttribute('data-palette');
+            cssColors = colorPalettes[currentPalette];
+            
+            // Regenerate if there's text
+            if (DOM.inputText.value.trim() !== "") {
+              generate(false);
+            }
+          });
+          
+          // Add the new option to the container
+          colorPaletteContainer.appendChild(paletteOption);
+        }
+      });
+      
+      // Fix mobile display for font chips and color palette
+      function fixMobileDisplay() {
+        const isMobile = window.innerWidth <= 480;
+        const isExtraSmallMobile = window.innerWidth <= 380;
+        
+        // Fix font chips
+        const chipGroup = document.querySelector('.md-chip-group');
+        const chips = document.querySelectorAll('.md-chip');
+        
+        if (chipGroup && chips.length > 0) {
+          // Set container style
+          chipGroup.style.display = 'flex';
+          chipGroup.style.flexWrap = 'wrap';
+          chipGroup.style.gap = isMobile ? '6px' : '8px';
+          chipGroup.style.justifyContent = 'flex-start';
+          
+          // Set chip styles
+          chips.forEach(chip => {
+            chip.style.padding = isMobile ? '8px 4px' : '8px 10px';
+            chip.style.minHeight = '38px';
+            chip.style.display = 'flex';
+            chip.style.alignItems = 'center';
+            chip.style.justifyContent = 'center';
+            chip.style.fontSize = isMobile ? '0.75rem' : '0.85rem';
+            chip.style.flex = isExtraSmallMobile ? '0 0 calc(50% - 6px)' : '0 0 calc(33.33% - 6px)';
+            chip.style.boxSizing = 'border-box';
+          });
+        }
+        
+        // Fix color palette
+        const colorPalette = document.querySelector('.color-palette');
+        const paletteOptions = document.querySelectorAll('.palette-option');
+        
+        if (colorPalette && paletteOptions.length > 0) {
+          // Use CSS Grid for better layout
+          colorPalette.style.display = 'grid';
+          colorPalette.style.gridTemplateColumns = isExtraSmallMobile ? 
+            'repeat(5, 1fr)' : isMobile ? 'repeat(6, 1fr)' : 'repeat(7, 1fr)';
+          colorPalette.style.gap = '8px';
+          colorPalette.style.padding = '0';
+          colorPalette.style.margin = '16px 0';
+          
+          // For small screens, make it scrollable if needed
+          if (isMobile) {
+            colorPalette.style.overflowX = 'auto';
+            colorPalette.style.scrollbarWidth = 'none'; // Firefox
+            colorPalette.style.webkitOverflowScrolling = 'touch';
+            
+            // Hide scrollbar
+            const style = document.createElement('style');
+            style.innerHTML = '.color-palette::-webkit-scrollbar { display: none; }';
+            document.head.appendChild(style);
+          }
+          
+          // Set palette option styles
+          paletteOptions.forEach(option => {
+            option.style.width = isMobile ? '32px' : '36px';
+            option.style.height = isMobile ? '32px' : '36px';
+            option.style.margin = '0 auto';
+          });
+        }
+      }
+      
+      // Call the function on load and window resize
+      fixMobileDisplay();
+      window.addEventListener('resize', fixMobileDisplay);
+      
+      // Additional mobile display improvements
+      function enhanceMobileDisplay() {
+        // Create a style element for mobile-specific styles
+        const styleEl = document.createElement('style');
+        styleEl.id = 'mobile-styles';
+        styleEl.innerHTML = `
+          @media (max-width: 480px) {
+            .md-chip-group {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 6px;
+              justify-content: flex-start;
+              margin-bottom: 16px;
+            }
+            
+            .md-chip {
+              flex: 0 0 calc(33.33% - 6px) !important;
+              padding: 8px 4px !important;
+              min-height: 38px !important;
+              display: flex !important;
+              align-items: center !important;
+              justify-content: center !important;
+              font-size: 0.75rem !important;
+              text-align: center !important;
+              margin: 0 !important;
+            }
+            
+            .color-palette {
+              display: grid !important;
+              grid-template-columns: repeat(6, 1fr) !important;
+              gap: 8px !important;
+              margin: 12px 0 !important;
+              overflow-x: auto !important;
+              scrollbar-width: none !important;
+              -webkit-overflow-scrolling: touch !important;
+            }
+            
+            .color-palette::-webkit-scrollbar {
+              display: none !important;
+            }
+            
+            .palette-option {
+              width: 32px !important;
+              height: 32px !important;
+              margin: 0 auto !important;
+            }
+
+            .material-card {
+              padding: 12px !important;
+            }
+          }
+          
+          @media (max-width: 380px) {
+            .md-chip {
+              flex: 0 0 calc(50% - 6px) !important;
+            }
+            
+            .color-palette {
+              grid-template-columns: repeat(5, 1fr) !important;
+            }
+          }
+        `;
+        
+        // Append or replace the style element
+        const existingStyle = document.getElementById('mobile-styles');
+        if (existingStyle) {
+          existingStyle.innerHTML = styleEl.innerHTML;
+        } else {
+          document.head.appendChild(styleEl);
+        }
+      }
+      
+      // Run the enhanced mobile display fixes
+      enhanceMobileDisplay();
+    });
+
+    // Add one more final fix for mobile - Run immediately when page loads
+    (function() {
+      // Check if we're on a mobile device
+      const isMobile = window.innerWidth <= 480;
+      const isSmallMobile = window.innerWidth <= 380;
+      
+      if (isMobile) {
+        // Apply immediate styles for mobile devices
+        setTimeout(function() {
+          const chips = document.querySelectorAll('.md-chip');
+          const colorPalette = document.querySelector('.color-palette');
+          const paletteOptions = document.querySelectorAll('.palette-option');
+          
+          // Apply direct styles to chips for better mobile display
+          chips.forEach(chip => {
+            chip.style.setProperty('padding', '8px 4px', 'important');
+            chip.style.setProperty('margin', '0', 'important');
+            chip.style.setProperty('flex-basis', isSmallMobile ? 'calc(50% - 6px)' : 'calc(33.33% - 6px)', 'important');
+            chip.style.setProperty('font-size', '0.75rem', 'important');
+            chip.style.setProperty('min-height', '38px', 'important');
+            chip.style.setProperty('display', 'flex', 'important');
+            chip.style.setProperty('align-items', 'center', 'important');
+            chip.style.setProperty('justify-content', 'center', 'important');
+            chip.style.setProperty('box-sizing', 'border-box', 'important');
+          });
+          
+          // Apply direct styles to color palette
+          if (colorPalette) {
+            colorPalette.style.setProperty('display', 'grid', 'important');
+            colorPalette.style.setProperty('grid-template-columns', isSmallMobile ? 'repeat(5, 1fr)' : 'repeat(6, 1fr)', 'important');
+            colorPalette.style.setProperty('gap', '8px', 'important');
+            colorPalette.style.setProperty('overflow-x', 'auto', 'important');
+            colorPalette.style.setProperty('scrollbar-width', 'none', 'important');
+            colorPalette.style.setProperty('margin', '12px 0', 'important');
+            
+            // Apply direct styles to palette options
+            paletteOptions.forEach(option => {
+              option.style.setProperty('width', '32px', 'important');
+              option.style.setProperty('height', '32px', 'important');
+              option.style.setProperty('margin', '0 auto', 'important');
+            });
+          }
+        }, 100);
+      }
+    })();
+  </script>
 </body> 
 </html>
+
